@@ -495,14 +495,14 @@
       </DataSource>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name="gameDBDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_UserDSName="gameDBDataSet" msprop:Generator_DataSetName="gameDBDataSet">
+  <xs:element name="gameDBDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="gameDBDataSet" msprop:Generator_UserDSName="gameDBDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="handed_item" msprop:Generator_RowEvHandlerName="handed_itemRowChangeEventHandler" msprop:Generator_RowDeletedName="handed_itemRowDeleted" msprop:Generator_RowDeletingName="handed_itemRowDeleting" msprop:Generator_RowEvArgName="handed_itemRowChangeEvent" msprop:Generator_TablePropName="handed_item" msprop:Generator_RowChangedName="handed_itemRowChanged" msprop:Generator_RowChangingName="handed_itemRowChanging" msprop:Generator_TableClassName="handed_itemDataTable" msprop:Generator_RowClassName="handed_itemRow" msprop:Generator_TableVarName="tablehanded_item" msprop:Generator_UserTableName="handed_item">
+        <xs:element name="handed_item" msprop:Generator_TableClassName="handed_itemDataTable" msprop:Generator_RowEvArgName="handed_itemRowChangeEvent" msprop:Generator_TableVarName="tablehanded_item" msprop:Generator_TablePropName="handed_item" msprop:Generator_RowDeletingName="handed_itemRowDeleting" msprop:Generator_RowChangingName="handed_itemRowChanging" msprop:Generator_RowDeletedName="handed_itemRowDeleted" msprop:Generator_RowClassName="handed_itemRow" msprop:Generator_RowEvHandlerName="handed_itemRowChangeEventHandler" msprop:Generator_RowChangedName="handed_itemRowChanged" msprop:Generator_UserTableName="handed_item">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="Handed_Item_ID" msprop:Generator_ColumnPropNameInRow="Handed_Item_ID" msprop:Generator_ColumnPropNameInTable="Handed_Item_IDColumn" msprop:Generator_ColumnVarNameInTable="columnHanded_Item_ID" msprop:Generator_UserColumnName="Handed_Item_ID" type="xs:short" />
-              <xs:element name="Item_Handed" msprop:Generator_ColumnPropNameInRow="Item_Handed" msprop:Generator_ColumnPropNameInTable="Item_HandedColumn" msprop:Generator_ColumnVarNameInTable="columnItem_Handed" msprop:Generator_UserColumnName="Item_Handed" minOccurs="0">
+              <xs:element name="Handed_Item_ID" msprop:Generator_ColumnVarNameInTable="columnHanded_Item_ID" msprop:Generator_ColumnPropNameInRow="Handed_Item_ID" msprop:Generator_ColumnPropNameInTable="Handed_Item_IDColumn" msprop:Generator_UserColumnName="Handed_Item_ID" type="xs:int" />
+              <xs:element name="Item_Handed" msprop:Generator_ColumnVarNameInTable="columnItem_Handed" msprop:Generator_ColumnPropNameInRow="Item_Handed" msprop:Generator_ColumnPropNameInTable="Item_HandedColumn" msprop:Generator_UserColumnName="Item_Handed" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="255" />
@@ -512,65 +512,25 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="inventory" msprop:Generator_RowEvHandlerName="inventoryRowChangeEventHandler" msprop:Generator_RowDeletedName="inventoryRowDeleted" msprop:Generator_RowDeletingName="inventoryRowDeleting" msprop:Generator_RowEvArgName="inventoryRowChangeEvent" msprop:Generator_TablePropName="inventory" msprop:Generator_RowChangedName="inventoryRowChanged" msprop:Generator_RowChangingName="inventoryRowChanging" msprop:Generator_TableClassName="inventoryDataTable" msprop:Generator_RowClassName="inventoryRow" msprop:Generator_TableVarName="tableinventory" msprop:Generator_UserTableName="inventory">
+        <xs:element name="inventory" msprop:Generator_TableClassName="inventoryDataTable" msprop:Generator_RowEvArgName="inventoryRowChangeEvent" msprop:Generator_TableVarName="tableinventory" msprop:Generator_TablePropName="inventory" msprop:Generator_RowDeletingName="inventoryRowDeleting" msprop:Generator_RowChangingName="inventoryRowChanging" msprop:Generator_RowDeletedName="inventoryRowDeleted" msprop:Generator_RowClassName="inventoryRow" msprop:Generator_RowEvHandlerName="inventoryRowChangeEventHandler" msprop:Generator_RowChangedName="inventoryRowChanged" msprop:Generator_UserTableName="inventory">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="Inventory_ID" msprop:Generator_ColumnPropNameInRow="Inventory_ID" msprop:Generator_ColumnPropNameInTable="Inventory_IDColumn" msprop:Generator_ColumnVarNameInTable="columnInventory_ID" msprop:Generator_UserColumnName="Inventory_ID" type="xs:short" />
-              <xs:element name="Equiped" msprop:Generator_ColumnPropNameInRow="Equiped" msprop:Generator_ColumnPropNameInTable="EquipedColumn" msprop:Generator_ColumnVarNameInTable="columnEquiped" msprop:Generator_UserColumnName="Equiped" type="xs:boolean" minOccurs="0" />
-              <xs:element name="Damage" msprop:Generator_ColumnPropNameInRow="Damage" msprop:Generator_ColumnPropNameInTable="DamageColumn" msprop:Generator_ColumnVarNameInTable="columnDamage" msprop:Generator_UserColumnName="Damage" type="xs:double" minOccurs="0" />
-              <xs:element name="Mana_Cost" msprop:Generator_ColumnPropNameInRow="Mana_Cost" msprop:Generator_ColumnPropNameInTable="Mana_CostColumn" msprop:Generator_ColumnVarNameInTable="columnMana_Cost" msprop:Generator_UserColumnName="Mana_Cost" type="xs:double" minOccurs="0" />
-              <xs:element name="HP_Cost" msprop:Generator_ColumnPropNameInRow="HP_Cost" msprop:Generator_ColumnPropNameInTable="HP_CostColumn" msprop:Generator_ColumnVarNameInTable="columnHP_Cost" msprop:Generator_UserColumnName="HP_Cost" type="xs:double" minOccurs="0" />
-              <xs:element name="Quest_Item" msprop:Generator_ColumnPropNameInRow="Quest_Item" msprop:Generator_ColumnPropNameInTable="Quest_ItemColumn" msprop:Generator_ColumnVarNameInTable="columnQuest_Item" msprop:Generator_UserColumnName="Quest_Item" type="xs:boolean" minOccurs="0" />
-              <xs:element name="UID" msprop:Generator_ColumnPropNameInRow="UID" msprop:Generator_ColumnPropNameInTable="UIDColumn" msprop:Generator_ColumnVarNameInTable="columnUID" msprop:Generator_UserColumnName="UID" type="xs:short" minOccurs="0" />
-              <xs:element name="Item_ID" msprop:Generator_ColumnPropNameInRow="Item_ID" msprop:Generator_ColumnPropNameInTable="Item_IDColumn" msprop:Generator_ColumnVarNameInTable="columnItem_ID" msprop:Generator_UserColumnName="Item_ID" type="xs:short" minOccurs="0" />
+              <xs:element name="Inventory_ID" msprop:Generator_ColumnVarNameInTable="columnInventory_ID" msprop:Generator_ColumnPropNameInRow="Inventory_ID" msprop:Generator_ColumnPropNameInTable="Inventory_IDColumn" msprop:Generator_UserColumnName="Inventory_ID" type="xs:int" />
+              <xs:element name="Equiped" msprop:Generator_ColumnVarNameInTable="columnEquiped" msprop:Generator_ColumnPropNameInRow="Equiped" msprop:Generator_ColumnPropNameInTable="EquipedColumn" msprop:Generator_UserColumnName="Equiped" type="xs:boolean" minOccurs="0" />
+              <xs:element name="Damage" msprop:Generator_ColumnVarNameInTable="columnDamage" msprop:Generator_ColumnPropNameInRow="Damage" msprop:Generator_ColumnPropNameInTable="DamageColumn" msprop:Generator_UserColumnName="Damage" type="xs:int" minOccurs="0" />
+              <xs:element name="Mana_Cost" msprop:Generator_ColumnVarNameInTable="columnMana_Cost" msprop:Generator_ColumnPropNameInRow="Mana_Cost" msprop:Generator_ColumnPropNameInTable="Mana_CostColumn" msprop:Generator_UserColumnName="Mana_Cost" type="xs:int" minOccurs="0" />
+              <xs:element name="HP_Cost" msprop:Generator_ColumnVarNameInTable="columnHP_Cost" msprop:Generator_ColumnPropNameInRow="HP_Cost" msprop:Generator_ColumnPropNameInTable="HP_CostColumn" msprop:Generator_UserColumnName="HP_Cost" type="xs:int" minOccurs="0" />
+              <xs:element name="Quest_Item" msprop:Generator_ColumnVarNameInTable="columnQuest_Item" msprop:Generator_ColumnPropNameInRow="Quest_Item" msprop:Generator_ColumnPropNameInTable="Quest_ItemColumn" msprop:Generator_UserColumnName="Quest_Item" type="xs:boolean" minOccurs="0" />
+              <xs:element name="UID" msprop:Generator_ColumnVarNameInTable="columnUID" msprop:Generator_ColumnPropNameInRow="UID" msprop:Generator_ColumnPropNameInTable="UIDColumn" msprop:Generator_UserColumnName="UID" type="xs:int" minOccurs="0" />
+              <xs:element name="Item_ID" msprop:Generator_ColumnVarNameInTable="columnItem_ID" msprop:Generator_ColumnPropNameInRow="Item_ID" msprop:Generator_ColumnPropNameInTable="Item_IDColumn" msprop:Generator_UserColumnName="Item_ID" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="item_type" msprop:Generator_RowEvHandlerName="item_typeRowChangeEventHandler" msprop:Generator_RowDeletedName="item_typeRowDeleted" msprop:Generator_RowDeletingName="item_typeRowDeleting" msprop:Generator_RowEvArgName="item_typeRowChangeEvent" msprop:Generator_TablePropName="item_type" msprop:Generator_RowChangedName="item_typeRowChanged" msprop:Generator_RowChangingName="item_typeRowChanging" msprop:Generator_TableClassName="item_typeDataTable" msprop:Generator_RowClassName="item_typeRow" msprop:Generator_TableVarName="tableitem_type" msprop:Generator_UserTableName="item_type">
+        <xs:element name="item_type" msprop:Generator_TableClassName="item_typeDataTable" msprop:Generator_RowEvArgName="item_typeRowChangeEvent" msprop:Generator_TableVarName="tableitem_type" msprop:Generator_TablePropName="item_type" msprop:Generator_RowDeletingName="item_typeRowDeleting" msprop:Generator_RowChangingName="item_typeRowChanging" msprop:Generator_RowDeletedName="item_typeRowDeleted" msprop:Generator_RowClassName="item_typeRow" msprop:Generator_RowEvHandlerName="item_typeRowChangeEventHandler" msprop:Generator_RowChangedName="item_typeRowChanged" msprop:Generator_UserTableName="item_type">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="Item_Type_ID" msprop:Generator_ColumnPropNameInRow="Item_Type_ID" msprop:Generator_ColumnPropNameInTable="Item_Type_IDColumn" msprop:Generator_ColumnVarNameInTable="columnItem_Type_ID" msprop:Generator_UserColumnName="Item_Type_ID" type="xs:short" />
-              <xs:element name="Type_Name" msprop:Generator_ColumnPropNameInRow="Type_Name" msprop:Generator_ColumnPropNameInTable="Type_NameColumn" msprop:Generator_ColumnVarNameInTable="columnType_Name" msprop:Generator_UserColumnName="Type_Name" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="255" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-        <xs:element name="items_catalog" msprop:Generator_RowEvHandlerName="items_catalogRowChangeEventHandler" msprop:Generator_RowDeletedName="items_catalogRowDeleted" msprop:Generator_RowDeletingName="items_catalogRowDeleting" msprop:Generator_RowEvArgName="items_catalogRowChangeEvent" msprop:Generator_TablePropName="items_catalog" msprop:Generator_RowChangedName="items_catalogRowChanged" msprop:Generator_RowChangingName="items_catalogRowChanging" msprop:Generator_TableClassName="items_catalogDataTable" msprop:Generator_RowClassName="items_catalogRow" msprop:Generator_TableVarName="tableitems_catalog" msprop:Generator_UserTableName="items_catalog">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="Item_ID" msprop:Generator_ColumnPropNameInRow="Item_ID" msprop:Generator_ColumnPropNameInTable="Item_IDColumn" msprop:Generator_ColumnVarNameInTable="columnItem_ID" msprop:Generator_UserColumnName="Item_ID" type="xs:short" />
-              <xs:element name="Item_Name" msprop:Generator_ColumnPropNameInRow="Item_Name" msprop:Generator_ColumnPropNameInTable="Item_NameColumn" msprop:Generator_ColumnVarNameInTable="columnItem_Name" msprop:Generator_UserColumnName="Item_Name" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="255" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Item_Durability" msprop:Generator_ColumnPropNameInRow="Item_Durability" msprop:Generator_ColumnPropNameInTable="Item_DurabilityColumn" msprop:Generator_ColumnVarNameInTable="columnItem_Durability" msprop:Generator_UserColumnName="Item_Durability" type="xs:double" minOccurs="0" />
-              <xs:element name="Item_Cost" msprop:Generator_ColumnPropNameInRow="Item_Cost" msprop:Generator_ColumnPropNameInTable="Item_CostColumn" msprop:Generator_ColumnVarNameInTable="columnItem_Cost" msprop:Generator_UserColumnName="Item_Cost" type="xs:double" minOccurs="0" />
-              <xs:element name="Weapon_Skill" msprop:Generator_ColumnPropNameInRow="Weapon_Skill" msprop:Generator_ColumnPropNameInTable="Weapon_SkillColumn" msprop:Generator_ColumnVarNameInTable="columnWeapon_Skill" msprop:Generator_UserColumnName="Weapon_Skill" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="255" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Rarity_ID" msprop:Generator_ColumnPropNameInRow="Rarity_ID" msprop:Generator_ColumnPropNameInTable="Rarity_IDColumn" msprop:Generator_ColumnVarNameInTable="columnRarity_ID" msprop:Generator_UserColumnName="Rarity_ID" type="xs:short" minOccurs="0" />
-              <xs:element name="Item_Type_ID" msprop:Generator_ColumnPropNameInRow="Item_Type_ID" msprop:Generator_ColumnPropNameInTable="Item_Type_IDColumn" msprop:Generator_ColumnVarNameInTable="columnItem_Type_ID" msprop:Generator_UserColumnName="Item_Type_ID" type="xs:short" minOccurs="0" />
-              <xs:element name="Handed_Item_ID" msprop:Generator_ColumnPropNameInRow="Handed_Item_ID" msprop:Generator_ColumnPropNameInTable="Handed_Item_IDColumn" msprop:Generator_ColumnVarNameInTable="columnHanded_Item_ID" msprop:Generator_UserColumnName="Handed_Item_ID" type="xs:short" minOccurs="0" />
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-        <xs:element name="player_class_skill" msprop:Generator_RowEvHandlerName="player_class_skillRowChangeEventHandler" msprop:Generator_RowDeletedName="player_class_skillRowDeleted" msprop:Generator_RowDeletingName="player_class_skillRowDeleting" msprop:Generator_RowEvArgName="player_class_skillRowChangeEvent" msprop:Generator_TablePropName="player_class_skill" msprop:Generator_RowChangedName="player_class_skillRowChanged" msprop:Generator_RowChangingName="player_class_skillRowChanging" msprop:Generator_TableClassName="player_class_skillDataTable" msprop:Generator_RowClassName="player_class_skillRow" msprop:Generator_TableVarName="tableplayer_class_skill" msprop:Generator_UserTableName="player_class_skill">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="Player_Class_Skill_ID" msprop:Generator_ColumnPropNameInRow="Player_Class_Skill_ID" msprop:Generator_ColumnPropNameInTable="Player_Class_Skill_IDColumn" msprop:Generator_ColumnVarNameInTable="columnPlayer_Class_Skill_ID" msprop:Generator_UserColumnName="Player_Class_Skill_ID" type="xs:short" />
-              <xs:element name="Skill_Name" msprop:Generator_ColumnPropNameInRow="Skill_Name" msprop:Generator_ColumnPropNameInTable="Skill_NameColumn" msprop:Generator_ColumnVarNameInTable="columnSkill_Name" msprop:Generator_UserColumnName="Skill_Name" minOccurs="0">
+              <xs:element name="Item_Type_ID" msprop:Generator_ColumnVarNameInTable="columnItem_Type_ID" msprop:Generator_ColumnPropNameInRow="Item_Type_ID" msprop:Generator_ColumnPropNameInTable="Item_Type_IDColumn" msprop:Generator_UserColumnName="Item_Type_ID" type="xs:int" />
+              <xs:element name="Type_Name" msprop:Generator_ColumnVarNameInTable="columnType_Name" msprop:Generator_ColumnPropNameInRow="Type_Name" msprop:Generator_ColumnPropNameInTable="Type_NameColumn" msprop:Generator_UserColumnName="Type_Name" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="255" />
@@ -580,40 +540,74 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="player_on_server" msprop:Generator_RowEvHandlerName="player_on_serverRowChangeEventHandler" msprop:Generator_RowDeletedName="player_on_serverRowDeleted" msprop:Generator_RowDeletingName="player_on_serverRowDeleting" msprop:Generator_RowEvArgName="player_on_serverRowChangeEvent" msprop:Generator_TablePropName="player_on_server" msprop:Generator_RowChangedName="player_on_serverRowChanged" msprop:Generator_RowChangingName="player_on_serverRowChanging" msprop:Generator_TableClassName="player_on_serverDataTable" msprop:Generator_RowClassName="player_on_serverRow" msprop:Generator_TableVarName="tableplayer_on_server" msprop:Generator_UserTableName="player_on_server">
+        <xs:element name="items_catalog" msprop:Generator_TableClassName="items_catalogDataTable" msprop:Generator_RowEvArgName="items_catalogRowChangeEvent" msprop:Generator_TableVarName="tableitems_catalog" msprop:Generator_TablePropName="items_catalog" msprop:Generator_RowDeletingName="items_catalogRowDeleting" msprop:Generator_RowChangingName="items_catalogRowChanging" msprop:Generator_RowDeletedName="items_catalogRowDeleted" msprop:Generator_RowClassName="items_catalogRow" msprop:Generator_RowEvHandlerName="items_catalogRowChangeEventHandler" msprop:Generator_RowChangedName="items_catalogRowChanged" msprop:Generator_UserTableName="items_catalog">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="UID" msprop:Generator_ColumnPropNameInRow="UID" msprop:Generator_ColumnPropNameInTable="UIDColumn" msprop:Generator_ColumnVarNameInTable="columnUID" msprop:Generator_UserColumnName="UID" type="xs:short" />
-              <xs:element name="Player_Name" msprop:Generator_ColumnPropNameInRow="Player_Name" msprop:Generator_ColumnPropNameInTable="Player_NameColumn" msprop:Generator_ColumnVarNameInTable="columnPlayer_Name" msprop:Generator_UserColumnName="Player_Name" minOccurs="0">
+              <xs:element name="Item_ID" msdata:AutoIncrement="true" msprop:Generator_ColumnVarNameInTable="columnItem_ID" msprop:Generator_ColumnPropNameInRow="Item_ID" msprop:Generator_ColumnPropNameInTable="Item_IDColumn" msprop:Generator_UserColumnName="Item_ID" type="xs:int" />
+              <xs:element name="Item_Name" msprop:Generator_ColumnVarNameInTable="columnItem_Name" msprop:Generator_ColumnPropNameInRow="Item_Name" msprop:Generator_ColumnPropNameInTable="Item_NameColumn" msprop:Generator_UserColumnName="Item_Name" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="255" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Player_Position_X" msprop:Generator_ColumnPropNameInRow="Player_Position_X" msprop:Generator_ColumnPropNameInTable="Player_Position_XColumn" msprop:Generator_ColumnVarNameInTable="columnPlayer_Position_X" msprop:Generator_UserColumnName="Player_Position_X" type="xs:double" minOccurs="0" />
-              <xs:element name="Player_Position_Y" msprop:Generator_ColumnPropNameInRow="Player_Position_Y" msprop:Generator_ColumnPropNameInTable="Player_Position_YColumn" msprop:Generator_ColumnVarNameInTable="columnPlayer_Position_Y" msprop:Generator_UserColumnName="Player_Position_Y" type="xs:double" minOccurs="0" />
-              <xs:element name="Player_Position_Z" msprop:Generator_ColumnPropNameInRow="Player_Position_Z" msprop:Generator_ColumnPropNameInTable="Player_Position_ZColumn" msprop:Generator_ColumnVarNameInTable="columnPlayer_Position_Z" msprop:Generator_UserColumnName="Player_Position_Z" type="xs:double" minOccurs="0" />
-              <xs:element name="Player_Level" msprop:Generator_ColumnPropNameInRow="Player_Level" msprop:Generator_ColumnPropNameInTable="Player_LevelColumn" msprop:Generator_ColumnVarNameInTable="columnPlayer_Level" msprop:Generator_UserColumnName="Player_Level" type="xs:double" minOccurs="0" />
-              <xs:element name="Player_Might" msprop:Generator_ColumnPropNameInRow="Player_Might" msprop:Generator_ColumnPropNameInTable="Player_MightColumn" msprop:Generator_ColumnVarNameInTable="columnPlayer_Might" msprop:Generator_UserColumnName="Player_Might" type="xs:double" minOccurs="0" />
-              <xs:element name="Player_Mana" msprop:Generator_ColumnPropNameInRow="Player_Mana" msprop:Generator_ColumnPropNameInTable="Player_ManaColumn" msprop:Generator_ColumnVarNameInTable="columnPlayer_Mana" msprop:Generator_UserColumnName="Player_Mana" type="xs:double" minOccurs="0" />
-              <xs:element name="Player_Armor" msprop:Generator_ColumnPropNameInRow="Player_Armor" msprop:Generator_ColumnPropNameInTable="Player_ArmorColumn" msprop:Generator_ColumnVarNameInTable="columnPlayer_Armor" msprop:Generator_UserColumnName="Player_Armor" type="xs:double" minOccurs="0" />
-              <xs:element name="Player_Health" msprop:Generator_ColumnPropNameInRow="Player_Health" msprop:Generator_ColumnPropNameInTable="Player_HealthColumn" msprop:Generator_ColumnVarNameInTable="columnPlayer_Health" msprop:Generator_UserColumnName="Player_Health" type="xs:double" minOccurs="0" />
-              <xs:element name="Player_Class_Skill_ID" msprop:Generator_ColumnPropNameInRow="Player_Class_Skill_ID" msprop:Generator_ColumnPropNameInTable="Player_Class_Skill_IDColumn" msprop:Generator_ColumnVarNameInTable="columnPlayer_Class_Skill_ID" msprop:Generator_UserColumnName="Player_Class_Skill_ID" type="xs:short" minOccurs="0" />
+              <xs:element name="Item_Durability" msprop:Generator_ColumnVarNameInTable="columnItem_Durability" msprop:Generator_ColumnPropNameInRow="Item_Durability" msprop:Generator_ColumnPropNameInTable="Item_DurabilityColumn" msprop:Generator_UserColumnName="Item_Durability" type="xs:int" minOccurs="0" />
+              <xs:element name="Item_Cost" msprop:Generator_ColumnVarNameInTable="columnItem_Cost" msprop:Generator_ColumnPropNameInRow="Item_Cost" msprop:Generator_ColumnPropNameInTable="Item_CostColumn" msprop:Generator_UserColumnName="Item_Cost" type="xs:int" minOccurs="0" />
+              <xs:element name="Weapon_Skill" msprop:Generator_ColumnVarNameInTable="columnWeapon_Skill" msprop:Generator_ColumnPropNameInRow="Weapon_Skill" msprop:Generator_ColumnPropNameInTable="Weapon_SkillColumn" msprop:Generator_UserColumnName="Weapon_Skill" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Rarity_ID" msprop:Generator_ColumnVarNameInTable="columnRarity_ID" msprop:Generator_ColumnPropNameInRow="Rarity_ID" msprop:Generator_ColumnPropNameInTable="Rarity_IDColumn" msprop:Generator_UserColumnName="Rarity_ID" type="xs:int" minOccurs="0" />
+              <xs:element name="Item_Type_ID" msprop:Generator_ColumnVarNameInTable="columnItem_Type_ID" msprop:Generator_ColumnPropNameInRow="Item_Type_ID" msprop:Generator_ColumnPropNameInTable="Item_Type_IDColumn" msprop:Generator_UserColumnName="Item_Type_ID" type="xs:int" minOccurs="0" />
+              <xs:element name="Handed_Item_ID" msprop:Generator_ColumnVarNameInTable="columnHanded_Item_ID" msprop:Generator_ColumnPropNameInRow="Handed_Item_ID" msprop:Generator_ColumnPropNameInTable="Handed_Item_IDColumn" msprop:Generator_UserColumnName="Handed_Item_ID" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="rarity" msprop:Generator_RowEvHandlerName="rarityRowChangeEventHandler" msprop:Generator_RowDeletedName="rarityRowDeleted" msprop:Generator_RowDeletingName="rarityRowDeleting" msprop:Generator_RowEvArgName="rarityRowChangeEvent" msprop:Generator_TablePropName="rarity" msprop:Generator_RowChangedName="rarityRowChanged" msprop:Generator_RowChangingName="rarityRowChanging" msprop:Generator_TableClassName="rarityDataTable" msprop:Generator_RowClassName="rarityRow" msprop:Generator_TableVarName="tablerarity" msprop:Generator_UserTableName="rarity">
+        <xs:element name="player_class_skill" msprop:Generator_TableClassName="player_class_skillDataTable" msprop:Generator_RowEvArgName="player_class_skillRowChangeEvent" msprop:Generator_TableVarName="tableplayer_class_skill" msprop:Generator_TablePropName="player_class_skill" msprop:Generator_RowDeletingName="player_class_skillRowDeleting" msprop:Generator_RowChangingName="player_class_skillRowChanging" msprop:Generator_RowDeletedName="player_class_skillRowDeleted" msprop:Generator_RowClassName="player_class_skillRow" msprop:Generator_RowEvHandlerName="player_class_skillRowChangeEventHandler" msprop:Generator_RowChangedName="player_class_skillRowChanged" msprop:Generator_UserTableName="player_class_skill">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="Rarity_ID" msprop:Generator_ColumnPropNameInRow="Rarity_ID" msprop:Generator_ColumnPropNameInTable="Rarity_IDColumn" msprop:Generator_ColumnVarNameInTable="columnRarity_ID" msprop:Generator_UserColumnName="Rarity_ID" type="xs:short" />
-              <xs:element name="Rarity_Name" msprop:Generator_ColumnPropNameInRow="Rarity_Name" msprop:Generator_ColumnPropNameInTable="Rarity_NameColumn" msprop:Generator_ColumnVarNameInTable="columnRarity_Name" msprop:Generator_UserColumnName="Rarity_Name" minOccurs="0">
+              <xs:element name="Player_Class_Skill_ID" msprop:Generator_ColumnVarNameInTable="columnPlayer_Class_Skill_ID" msprop:Generator_ColumnPropNameInRow="Player_Class_Skill_ID" msprop:Generator_ColumnPropNameInTable="Player_Class_Skill_IDColumn" msprop:Generator_UserColumnName="Player_Class_Skill_ID" type="xs:int" />
+              <xs:element name="Skill_Name" msprop:Generator_ColumnVarNameInTable="columnSkill_Name" msprop:Generator_ColumnPropNameInRow="Skill_Name" msprop:Generator_ColumnPropNameInTable="Skill_NameColumn" msprop:Generator_UserColumnName="Skill_Name" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="255" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="player_on_server" msprop:Generator_TableClassName="player_on_serverDataTable" msprop:Generator_RowEvArgName="player_on_serverRowChangeEvent" msprop:Generator_TableVarName="tableplayer_on_server" msprop:Generator_TablePropName="player_on_server" msprop:Generator_RowDeletingName="player_on_serverRowDeleting" msprop:Generator_RowChangingName="player_on_serverRowChanging" msprop:Generator_RowDeletedName="player_on_serverRowDeleted" msprop:Generator_RowClassName="player_on_serverRow" msprop:Generator_RowEvHandlerName="player_on_serverRowChangeEventHandler" msprop:Generator_RowChangedName="player_on_serverRowChanged" msprop:Generator_UserTableName="player_on_server">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="UID" msprop:Generator_ColumnVarNameInTable="columnUID" msprop:Generator_ColumnPropNameInRow="UID" msprop:Generator_ColumnPropNameInTable="UIDColumn" msprop:Generator_UserColumnName="UID" type="xs:int" />
+              <xs:element name="Player_Name" msprop:Generator_ColumnVarNameInTable="columnPlayer_Name" msprop:Generator_ColumnPropNameInRow="Player_Name" msprop:Generator_ColumnPropNameInTable="Player_NameColumn" msprop:Generator_UserColumnName="Player_Name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Player_Position_X" msprop:Generator_ColumnVarNameInTable="columnPlayer_Position_X" msprop:Generator_ColumnPropNameInRow="Player_Position_X" msprop:Generator_ColumnPropNameInTable="Player_Position_XColumn" msprop:Generator_UserColumnName="Player_Position_X" type="xs:int" minOccurs="0" />
+              <xs:element name="Player_Position_Y" msprop:Generator_ColumnVarNameInTable="columnPlayer_Position_Y" msprop:Generator_ColumnPropNameInRow="Player_Position_Y" msprop:Generator_ColumnPropNameInTable="Player_Position_YColumn" msprop:Generator_UserColumnName="Player_Position_Y" type="xs:int" minOccurs="0" />
+              <xs:element name="Player_Position_Z" msprop:Generator_ColumnVarNameInTable="columnPlayer_Position_Z" msprop:Generator_ColumnPropNameInRow="Player_Position_Z" msprop:Generator_ColumnPropNameInTable="Player_Position_ZColumn" msprop:Generator_UserColumnName="Player_Position_Z" type="xs:int" minOccurs="0" />
+              <xs:element name="Player_Level" msprop:Generator_ColumnVarNameInTable="columnPlayer_Level" msprop:Generator_ColumnPropNameInRow="Player_Level" msprop:Generator_ColumnPropNameInTable="Player_LevelColumn" msprop:Generator_UserColumnName="Player_Level" type="xs:int" minOccurs="0" />
+              <xs:element name="Player_Might" msprop:Generator_ColumnVarNameInTable="columnPlayer_Might" msprop:Generator_ColumnPropNameInRow="Player_Might" msprop:Generator_ColumnPropNameInTable="Player_MightColumn" msprop:Generator_UserColumnName="Player_Might" type="xs:int" minOccurs="0" />
+              <xs:element name="Player_Mana" msprop:Generator_ColumnVarNameInTable="columnPlayer_Mana" msprop:Generator_ColumnPropNameInRow="Player_Mana" msprop:Generator_ColumnPropNameInTable="Player_ManaColumn" msprop:Generator_UserColumnName="Player_Mana" type="xs:int" minOccurs="0" />
+              <xs:element name="Player_Armor" msprop:Generator_ColumnVarNameInTable="columnPlayer_Armor" msprop:Generator_ColumnPropNameInRow="Player_Armor" msprop:Generator_ColumnPropNameInTable="Player_ArmorColumn" msprop:Generator_UserColumnName="Player_Armor" type="xs:int" minOccurs="0" />
+              <xs:element name="Player_Health" msprop:Generator_ColumnVarNameInTable="columnPlayer_Health" msprop:Generator_ColumnPropNameInRow="Player_Health" msprop:Generator_ColumnPropNameInTable="Player_HealthColumn" msprop:Generator_UserColumnName="Player_Health" type="xs:int" minOccurs="0" />
+              <xs:element name="Player_Class_Skill_ID" msprop:Generator_ColumnVarNameInTable="columnPlayer_Class_Skill_ID" msprop:Generator_ColumnPropNameInRow="Player_Class_Skill_ID" msprop:Generator_ColumnPropNameInTable="Player_Class_Skill_IDColumn" msprop:Generator_UserColumnName="Player_Class_Skill_ID" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="rarity" msprop:Generator_TableClassName="rarityDataTable" msprop:Generator_RowEvArgName="rarityRowChangeEvent" msprop:Generator_TableVarName="tablerarity" msprop:Generator_TablePropName="rarity" msprop:Generator_RowDeletingName="rarityRowDeleting" msprop:Generator_RowChangingName="rarityRowChanging" msprop:Generator_RowDeletedName="rarityRowDeleted" msprop:Generator_RowClassName="rarityRow" msprop:Generator_RowEvHandlerName="rarityRowChangeEventHandler" msprop:Generator_RowChangedName="rarityRowChanged" msprop:Generator_UserTableName="rarity">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Rarity_ID" msprop:Generator_ColumnVarNameInTable="columnRarity_ID" msprop:Generator_ColumnPropNameInRow="Rarity_ID" msprop:Generator_ColumnPropNameInTable="Rarity_IDColumn" msprop:Generator_UserColumnName="Rarity_ID" type="xs:int" />
+              <xs:element name="Rarity_Name" msprop:Generator_ColumnVarNameInTable="columnRarity_Name" msprop:Generator_ColumnPropNameInRow="Rarity_Name" msprop:Generator_ColumnPropNameInTable="Rarity_NameColumn" msprop:Generator_UserColumnName="Rarity_Name" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -650,12 +644,12 @@
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="items_cataloginventory" msdata:parent="items_catalog" msdata:child="inventory" msdata:parentkey="Item_ID" msdata:childkey="Item_ID" msprop:Generator_UserParentTable="items_catalog" msprop:Generator_UserChildTable="inventory" msprop:Generator_RelationVarName="relationitems_cataloginventory" msprop:Generator_UserRelationName="items_cataloginventory" msprop:Generator_ChildPropName="GetinventoryRows" msprop:Generator_ParentPropName="items_catalogRow" />
-      <msdata:Relationship name="player_on_serverinventory" msdata:parent="player_on_server" msdata:child="inventory" msdata:parentkey="UID" msdata:childkey="UID" msprop:Generator_UserParentTable="player_on_server" msprop:Generator_UserChildTable="inventory" msprop:Generator_RelationVarName="relationplayer_on_serverinventory" msprop:Generator_UserRelationName="player_on_serverinventory" msprop:Generator_ChildPropName="GetinventoryRows" msprop:Generator_ParentPropName="player_on_serverRow" />
-      <msdata:Relationship name="handed_itemitems_catalog" msdata:parent="handed_item" msdata:child="items_catalog" msdata:parentkey="Handed_Item_ID" msdata:childkey="Handed_Item_ID" msprop:Generator_UserParentTable="handed_item" msprop:Generator_UserChildTable="items_catalog" msprop:Generator_RelationVarName="relationhanded_itemitems_catalog" msprop:Generator_ChildPropName="Getitems_catalogRows" msprop:Generator_ParentPropName="handed_itemRow" msprop:Generator_UserRelationName="handed_itemitems_catalog" />
-      <msdata:Relationship name="item_typeitems_catalog" msdata:parent="item_type" msdata:child="items_catalog" msdata:parentkey="Item_Type_ID" msdata:childkey="Item_Type_ID" msprop:Generator_UserParentTable="item_type" msprop:Generator_UserChildTable="items_catalog" msprop:Generator_RelationVarName="relationitem_typeitems_catalog" msprop:Generator_ChildPropName="Getitems_catalogRows" msprop:Generator_ParentPropName="item_typeRow" msprop:Generator_UserRelationName="item_typeitems_catalog" />
-      <msdata:Relationship name="rarityitems_catalog" msdata:parent="rarity" msdata:child="items_catalog" msdata:parentkey="Rarity_ID" msdata:childkey="Rarity_ID" msprop:Generator_UserParentTable="rarity" msprop:Generator_UserChildTable="items_catalog" msprop:Generator_RelationVarName="relationrarityitems_catalog" msprop:Generator_UserRelationName="rarityitems_catalog" msprop:Generator_ChildPropName="Getitems_catalogRows" msprop:Generator_ParentPropName="rarityRow" />
-      <msdata:Relationship name="player_class_skillplayer_on_server" msdata:parent="player_class_skill" msdata:child="player_on_server" msdata:parentkey="Player_Class_Skill_ID" msdata:childkey="Player_Class_Skill_ID" msprop:Generator_UserParentTable="player_class_skill" msprop:Generator_UserChildTable="player_on_server" msprop:Generator_RelationVarName="relationplayer_class_skillplayer_on_server" msprop:Generator_ChildPropName="Getplayer_on_serverRows" msprop:Generator_ParentPropName="player_class_skillRow" msprop:Generator_UserRelationName="player_class_skillplayer_on_server" />
+      <msdata:Relationship name="items_catalog_handed_item" msdata:parent="handed_item" msdata:child="items_catalog" msdata:parentkey="Handed_Item_ID" msdata:childkey="Handed_Item_ID" msprop:Generator_UserChildTable="items_catalog" msprop:Generator_ChildPropName="Getitems_catalogRows" msprop:Generator_UserRelationName="items_catalog_handed_item" msprop:Generator_ParentPropName="handed_itemRow" msprop:Generator_RelationVarName="relationitems_catalog_handed_item" msprop:Generator_UserParentTable="handed_item" />
+      <msdata:Relationship name="rarity_items_catalog" msdata:parent="rarity" msdata:child="items_catalog" msdata:parentkey="Rarity_ID" msdata:childkey="Rarity_ID" msprop:Generator_UserChildTable="items_catalog" msprop:Generator_ChildPropName="Getitems_catalogRows" msprop:Generator_UserRelationName="rarity_items_catalog" msprop:Generator_RelationVarName="relationrarity_items_catalog" msprop:Generator_UserParentTable="rarity" msprop:Generator_ParentPropName="rarityRow" />
+      <msdata:Relationship name="item_type_items_catalog" msdata:parent="item_type" msdata:child="items_catalog" msdata:parentkey="Item_Type_ID" msdata:childkey="Item_Type_ID" msprop:Generator_UserChildTable="items_catalog" msprop:Generator_ChildPropName="Getitems_catalogRows" msprop:Generator_UserRelationName="item_type_items_catalog" msprop:Generator_ParentPropName="item_typeRow" msprop:Generator_RelationVarName="relationitem_type_items_catalog" msprop:Generator_UserParentTable="item_type" />
+      <msdata:Relationship name="items_catalog_inventory" msdata:parent="items_catalog" msdata:child="inventory" msdata:parentkey="Item_ID" msdata:childkey="Item_ID" msprop:Generator_UserChildTable="inventory" msprop:Generator_ChildPropName="GetinventoryRows" msprop:Generator_UserRelationName="items_catalog_inventory" msprop:Generator_RelationVarName="relationitems_catalog_inventory" msprop:Generator_UserParentTable="items_catalog" msprop:Generator_ParentPropName="items_catalogRow" />
+      <msdata:Relationship name="player_on_server_inventory" msdata:parent="player_on_server" msdata:child="inventory" msdata:parentkey="UID" msdata:childkey="UID" msprop:Generator_UserChildTable="inventory" msprop:Generator_ChildPropName="GetinventoryRows" msprop:Generator_UserRelationName="player_on_server_inventory" msprop:Generator_RelationVarName="relationplayer_on_server_inventory" msprop:Generator_UserParentTable="player_on_server" msprop:Generator_ParentPropName="player_on_serverRow" />
+      <msdata:Relationship name="player_class_skill_player_on_server" msdata:parent="player_class_skill" msdata:child="player_on_server" msdata:parentkey="Player_Class_Skill_ID" msdata:childkey="Player_Class_Skill_ID" msprop:Generator_UserChildTable="player_on_server" msprop:Generator_ChildPropName="Getplayer_on_serverRows" msprop:Generator_UserRelationName="player_class_skill_player_on_server" msprop:Generator_ParentPropName="player_class_skillRow" msprop:Generator_RelationVarName="relationplayer_class_skill_player_on_server" msprop:Generator_UserParentTable="player_class_skill" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>
