@@ -128,6 +128,7 @@ namespace Game_Database_Viewer
             this.MaximumSize = new System.Drawing.Size(300, 300);
             this.MinimumSize = new System.Drawing.Size(300, 300);
             this.Name = "FormLogin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormLogin";
             this.ResumeLayout(false);
             this.PerformLayout();

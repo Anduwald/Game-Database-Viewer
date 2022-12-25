@@ -379,6 +379,7 @@
             this.MainMenuStrip = this.menuStripMain;
             this.MinimumSize = new System.Drawing.Size(800, 480);
             this.Name = "FormMain";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Database viewer";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormMain_FormClosing);
             this.menuStripMain.ResumeLayout(false);
