@@ -7,21 +7,19 @@ using System.Windows.Forms;
 
 namespace Game_Database_Viewer
 {
-    public partial class FormPlayer : Form
+    public partial class FormRarity : Form
     {
 
         #region FormInit
-        public FormPlayer()
+        public FormRarity()
         {
             InitializeComponent();
         }
 
-        private void FormPlayer_Load(object sender, EventArgs e)
+        private void FormRarity_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'gameDBDataSet.player_class_skill' table. You can move, or remove it, as needed.
-            this.player_class_skillTableAdapter.Fill(this.gameDBDataSet.player_class_skill);
-            // TODO: This line of code loads data into the 'gameDBDataSet.player_on_server' table. You can move, or remove it, as needed.
-            this.player_on_serverTableAdapter.Fill(this.gameDBDataSet.player_on_server);
+            // TODO: This line of code loads data into the 'gameDBDataSet.rarity' table. You can move, or remove it, as needed.
+            this.rarityTableAdapter.Fill(this.gameDBDataSet.rarity);
         }
         #endregion
 
@@ -63,7 +61,6 @@ namespace Game_Database_Viewer
                     {
                         resultValue = regex.Replace(value, substitution);
                         this.dataGridView_DB.Rows[rowIndex].Cells[columnIndex].Value = resultValue;
-                        //Console.WriteLine(columnIndex + " " + rowIndex + " " + this.dataGridView_DB.Rows[rowIndex].Cells[columnIndex].Value + " " + resultValue);
 
                         MessageBox.Show("You can not enter number in this field! \nWe are delete them for you.", "Message", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     }
@@ -78,11 +75,11 @@ namespace Game_Database_Viewer
         #region BindingSourceNavigator
         private void toolStripTextBoxSearch_Field_TextChanged(object sender, EventArgs e)
         {
-            int i = this.playeronserverBindingSource.Find("Player_Name", toolStripTextBoxSearch_Field.Text);
+            int i = this.rarityBindingSource1.Find("Rarity_Name", toolStripTextBoxSearch_Field.Text);
 
             if (i == -1)
             {
-                DataView dv = new DataView(this.gameDBDataSet.player_on_server as DataTable);
+                DataView dv = new DataView(this.gameDBDataSet.rarity as DataTable);
 
                 string pattern = @"[^\p{L}\p{M}\'\s]";
                 string substitution = @"";
@@ -98,19 +95,19 @@ namespace Game_Database_Viewer
                     toolStripTextBoxSearch_Field.SelectionLength = 0;
                 };
 
-                dv.RowFilter = string.Format("Player_Name LIKE '*{0}*'", toolStripTextBoxSearch_Field.Text);
+                dv.RowFilter = string.Format("Rarity_Name LIKE '*{0}*'", toolStripTextBoxSearch_Field.Text);
                 if (dv.Count != 0)
                 {
-                    i = this.playeronserverBindingSource.Find("Player_Name", dv[0]["Player_Name"]);
+                    i = this.rarityBindingSource1.Find("Rarity_Name", dv[0]["Rarity_Name"]);
                 }
 
                 dv.Dispose();
             }
-            this.playeronserverBindingSource.Position = i;
+            this.rarityBindingSource1.Position = i;
         }
         private void toolStripButtonSave_Click(object sender, EventArgs e)
         {
-            this.player_on_serverTableAdapter.Update(this.gameDBDataSet.player_on_server);
+            this.rarityTableAdapter.Update(this.gameDBDataSet.rarity);
         }
         #endregion
 

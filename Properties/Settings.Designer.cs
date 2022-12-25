@@ -32,5 +32,17 @@ namespace Game_Database_Viewer.Properties {
                 return ((string)(this["gameDBConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0, 0")]
+        public global::System.Drawing.Point Pos {
+            get {
+                return ((global::System.Drawing.Point)(this["Pos"]));
+            }
+            set {
+                this["Pos"] = value;
+            }
+        }
     }
 }

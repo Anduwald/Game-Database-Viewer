@@ -10,6 +10,7 @@ namespace Game_Database_Viewer
 {
     public partial class FormMain : Form
     {
+
         #region FormInit
         public FormMain()
         {
@@ -18,6 +19,8 @@ namespace Game_Database_Viewer
 
         private void FormMain_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'gameDBDataSet.general_info' table. You can move, or remove it, as needed.
+            this.general_infoTableAdapter.Fill(this.gameDBDataSet.general_info);
             // TODO: This line of code loads data into the 'gameDBDataSet.rarity' table. You can move, or remove it, as needed.
             this.rarityTableAdapter.Fill(this.gameDBDataSet.rarity);
             // TODO: This line of code loads data into the 'gameDBDataSet.item_type' table. You can move, or remove it, as needed.
@@ -30,7 +33,7 @@ namespace Game_Database_Viewer
         }
         private void FormMain_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Settings.Default.Save();
+            //Settings.Default.Save();
             e.Cancel = MessageBox.Show("Do you want to quit?",
          "Attention", MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes;
         }
@@ -73,10 +76,10 @@ namespace Game_Database_Viewer
                     if (Regex.Match(value, pattern, options).Success)
                     {
                         resultValue = regex.Replace(value, substitution);
+                        this.dataGridView_DB.Rows[rowIndex].Cells[columnIndex].Value = resultValue;
                         //For debuging
                         //Console.WriteLine(columnIndex + " " + rowIndex + " " + this.dataGridView_DB.Rows[rowIndex].Cells[columnIndex].Value + " " + resultValue);
 
-                        this.dataGridView_DB.Rows[rowIndex].Cells[columnIndex].Value = resultValue;
                         MessageBox.Show("You can not enter number in this field! \nWe are delete them for you.", "Message", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     }
             }
@@ -121,6 +124,36 @@ namespace Game_Database_Viewer
             FormPlayer formPlayer = new FormPlayer();
             formPlayer.ShowDialog();
         }
+        private void playerClassSkillToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormSkill formSkill = new FormSkill();
+            formSkill.ShowDialog();
+        }
+        private void inventoryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormInventory formInventory = new FormInventory();
+            formInventory.ShowDialog();
+        }
+        private void itemsCatalogToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormItemsCatalog formitemsCatalog = new FormItemsCatalog();
+            formitemsCatalog.ShowDialog();
+        }
+        private void itemRarityToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormRarity formRarity = new FormRarity();
+            formRarity.ShowDialog();
+        }
+        private void itemTypeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormItemType formItemType = new FormItemType();
+            formItemType.ShowDialog();
+        }
+        private void itemHandedToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormHanded formHanded = new FormHanded();
+            formHanded.ShowDialog();
+        }
         #endregion
 
         #region BindingSourceNavigator
@@ -141,6 +174,9 @@ namespace Game_Database_Viewer
                 if (Regex.Match(toolStripTextBoxSearch_Field.Text.ToString(), pattern, options).Success)
                 {
                     toolStripTextBoxSearch_Field.Text = regex.Replace(toolStripTextBoxSearch_Field.Text.ToString(), substitution);
+
+                    toolStripTextBoxSearch_Field.SelectionStart = toolStripTextBoxSearch_Field.Text.Length;
+                    toolStripTextBoxSearch_Field.SelectionLength = 0;
                 };
 
                 dv.RowFilter = string.Format("Item_Name LIKE '*{0}*'", toolStripTextBoxSearch_Field.Text);

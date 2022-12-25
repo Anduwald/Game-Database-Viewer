@@ -47,6 +47,42 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormInventory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormInventory.Designer.cs">
+      <DependentUpon>FormInventory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormItemsCatalog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormItemsCatalog.Designer.cs">
+      <DependentUpon>FormItemsCatalog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormHanded.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormHanded.Designer.cs">
+      <DependentUpon>FormHanded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormItemType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormItemType.Designer.cs">
+      <DependentUpon>FormItemType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormRarity.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRarity.Designer.cs">
+      <DependentUpon>FormRarity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSkill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSkill.Designer.cs">
+      <DependentUpon>FormSkill.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormPlayer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -69,6 +105,24 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormInventory.resx">
+      <DependentUpon>FormInventory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormItemsCatalog.resx">
+      <DependentUpon>FormItemsCatalog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormHanded.resx">
+      <DependentUpon>FormHanded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormItemType.resx">
+      <DependentUpon>FormItemType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRarity.resx">
+      <DependentUpon>FormRarity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSkill.resx">
+      <DependentUpon>FormSkill.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormPlayer.resx">
       <DependentUpon>FormPlayer.cs</DependentUpon>
     </EmbeddedResource>
@@ -83,6 +137,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="gameDBDataSet.xsc">
       <DependentUpon>gameDBDataSet.xsd</DependentUpon>
@@ -110,6 +165,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="gameDB.mdb" />
+    <None Include="icon\Save.png" />
+    <None Include="icon\Quit.png" />
+    <None Include="icon\About.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
