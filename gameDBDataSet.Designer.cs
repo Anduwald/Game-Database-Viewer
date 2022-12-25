@@ -1026,10 +1026,10 @@ namespace Game_Database_Viewer {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public inventoryRow AddinventoryRow(int Inventory_ID, bool Equiped, int Damage, int Mana_Cost, int HP_Cost, bool Quest_Item, player_on_serverRow parentplayer_on_serverRowByplayer_on_server_inventory, items_catalogRow parentitems_catalogRowByitems_catalog_inventory) {
+            public inventoryRow AddinventoryRow(bool Equiped, int Damage, int Mana_Cost, int HP_Cost, bool Quest_Item, player_on_serverRow parentplayer_on_serverRowByplayer_on_server_inventory, items_catalogRow parentitems_catalogRowByitems_catalog_inventory) {
                 inventoryRow rowinventoryRow = ((inventoryRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        Inventory_ID,
+                        null,
                         Equiped,
                         Damage,
                         Mana_Cost,
@@ -1103,6 +1103,7 @@ namespace Game_Database_Viewer {
                 base.Columns.Add(this.columnItem_ID);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnInventory_ID}, true));
+                this.columnInventory_ID.AutoIncrement = true;
                 this.columnInventory_ID.AutoIncrementSeed = 1;
                 this.columnInventory_ID.AllowDBNull = false;
                 this.columnInventory_ID.Unique = true;
