@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.menuStripMain = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -42,18 +43,19 @@
             this.itemRarityToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.itemTypeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.itemHandedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.generalinfoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.gameDBDataSet = new Game_Database_Viewer.gameDBDataSet();
-            this.itemscatalogBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.rarityBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.itemtypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.handeditemBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridView_SQL = new System.Windows.Forms.DataGridView();
             this.textBox_SQL = new System.Windows.Forms.TextBox();
             this.button_SQL = new System.Windows.Forms.Button();
             this.rarityIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.itemTypeIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.handedItemIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.label1 = new System.Windows.Forms.Label();
+            this.itemtypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.gameDBDataSet = new Game_Database_Viewer.gameDBDataSet();
+            this.handeditemBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.generalinfoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.itemscatalogBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.rarityBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.items_catalogTableAdapter = new Game_Database_Viewer.gameDBDataSetTableAdapters.items_catalogTableAdapter();
             this.rarityTableAdapter = new Game_Database_Viewer.gameDBDataSetTableAdapters.rarityTableAdapter();
             this.item_typeTableAdapter = new Game_Database_Viewer.gameDBDataSetTableAdapters.item_typeTableAdapter();
@@ -66,15 +68,14 @@
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label1 = new System.Windows.Forms.Label();
             this.menuStripMain.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.generalinfoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_SQL)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.itemtypeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gameDBDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.handeditemBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.generalinfoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.itemscatalogBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rarityBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.itemtypeBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.handeditemBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_SQL)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStripMain
@@ -184,36 +185,6 @@
             this.itemHandedToolStripMenuItem.Text = "Item Handed";
             this.itemHandedToolStripMenuItem.Click += new System.EventHandler(this.itemHandedToolStripMenuItem_Click);
             // 
-            // generalinfoBindingSource
-            // 
-            this.generalinfoBindingSource.DataMember = "general_info";
-            this.generalinfoBindingSource.DataSource = this.gameDBDataSet;
-            // 
-            // gameDBDataSet
-            // 
-            this.gameDBDataSet.DataSetName = "gameDBDataSet";
-            this.gameDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // itemscatalogBindingSource
-            // 
-            this.itemscatalogBindingSource.DataMember = "items_catalog";
-            this.itemscatalogBindingSource.DataSource = this.gameDBDataSet;
-            // 
-            // rarityBindingSource
-            // 
-            this.rarityBindingSource.DataMember = "rarity";
-            this.rarityBindingSource.DataSource = this.gameDBDataSet;
-            // 
-            // itemtypeBindingSource
-            // 
-            this.itemtypeBindingSource.DataMember = "item_type";
-            this.itemtypeBindingSource.DataSource = this.gameDBDataSet;
-            // 
-            // handeditemBindingSource
-            // 
-            this.handeditemBindingSource.DataMember = "handed_item";
-            this.handeditemBindingSource.DataSource = this.gameDBDataSet;
-            // 
             // dataGridView_SQL
             // 
             this.dataGridView_SQL.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -280,6 +251,50 @@
             this.handedItemIDDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.handedItemIDDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.handedItemIDDataGridViewTextBoxColumn.ValueMember = "Item_Handed";
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(13, 28);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(222, 24);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Custom query result table";
+            // 
+            // itemtypeBindingSource
+            // 
+            this.itemtypeBindingSource.DataMember = "item_type";
+            this.itemtypeBindingSource.DataSource = this.gameDBDataSet;
+            // 
+            // gameDBDataSet
+            // 
+            this.gameDBDataSet.DataSetName = "gameDBDataSet";
+            this.gameDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // handeditemBindingSource
+            // 
+            this.handeditemBindingSource.DataMember = "handed_item";
+            this.handeditemBindingSource.DataSource = this.gameDBDataSet;
+            // 
+            // generalinfoBindingSource
+            // 
+            this.generalinfoBindingSource.DataMember = "general_info";
+            this.generalinfoBindingSource.DataSource = this.gameDBDataSet;
+            // 
+            // itemscatalogBindingSource
+            // 
+            this.itemscatalogBindingSource.DataMember = "items_catalog";
+            this.itemscatalogBindingSource.DataSource = this.gameDBDataSet;
+            // 
+            // rarityBindingSource
+            // 
+            this.rarityBindingSource.DataMember = "rarity";
+            this.rarityBindingSource.DataSource = this.gameDBDataSet;
             // 
             // items_catalogTableAdapter
             // 
@@ -351,20 +366,6 @@
             this.dataGridViewTextBoxColumn7.HeaderText = "Handed_Item_ID";
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(13, 28);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(222, 24);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Custom query result table";
-            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -376,6 +377,7 @@
             this.Controls.Add(this.textBox_SQL);
             this.Controls.Add(this.dataGridView_SQL);
             this.Controls.Add(this.menuStripMain);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStripMain;
             this.MinimumSize = new System.Drawing.Size(800, 480);
             this.Name = "FormMain";
@@ -384,13 +386,13 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormMain_FormClosing);
             this.menuStripMain.ResumeLayout(false);
             this.menuStripMain.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.generalinfoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_SQL)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.itemtypeBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gameDBDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.handeditemBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.generalinfoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.itemscatalogBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rarityBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.itemtypeBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.handeditemBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_SQL)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormInventory));
             this.bindingNavigatorMain = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.inventoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -528,8 +529,10 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.dataGridView_DB);
             this.Controls.Add(this.bindingNavigatorMain);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(800, 480);
             this.Name = "FormInventory";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Database viewer | Inventory";
             this.Load += new System.EventHandler(this.FormInventory_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigatorMain)).EndInit();

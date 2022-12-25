@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormSkill));
             this.bindingNavigatorMain = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.playerclassskillBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
@@ -49,8 +50,6 @@
             this.playeronserverBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.itemscatalogBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridView_DB = new System.Windows.Forms.DataGridView();
-            this.playerClassSkillIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.skillNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.playerclassskillBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.rarityBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.itemtypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -58,19 +57,21 @@
             this.rarityIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.itemTypeIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.handedItemIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.items_catalogTableAdapter = new Game_Database_Viewer.gameDBDataSetTableAdapters.items_catalogTableAdapter();
             this.rarityTableAdapter = new Game_Database_Viewer.gameDBDataSetTableAdapters.rarityTableAdapter();
             this.item_typeTableAdapter = new Game_Database_Viewer.gameDBDataSetTableAdapters.item_typeTableAdapter();
             this.handed_itemTableAdapter = new Game_Database_Viewer.gameDBDataSetTableAdapters.handed_itemTableAdapter();
             this.player_on_serverTableAdapter = new Game_Database_Viewer.gameDBDataSetTableAdapters.player_on_serverTableAdapter();
             this.player_class_skillTableAdapter = new Game_Database_Viewer.gameDBDataSetTableAdapters.player_class_skillTableAdapter();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.playerClassSkillIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.skillNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigatorMain)).BeginInit();
             this.bindingNavigatorMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.playerclassskillBindingSource1)).BeginInit();
@@ -270,22 +271,6 @@
             this.dataGridView_DB.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dataGridView_DB_DataError);
             this.dataGridView_DB.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dataGridView_DB_RowPostPaint);
             // 
-            // playerClassSkillIDDataGridViewTextBoxColumn
-            // 
-            this.playerClassSkillIDDataGridViewTextBoxColumn.DataPropertyName = "Player_Class_Skill_ID";
-            this.playerClassSkillIDDataGridViewTextBoxColumn.HeaderText = "Player_Class_Skill_ID";
-            this.playerClassSkillIDDataGridViewTextBoxColumn.Name = "playerClassSkillIDDataGridViewTextBoxColumn";
-            this.playerClassSkillIDDataGridViewTextBoxColumn.Visible = false;
-            this.playerClassSkillIDDataGridViewTextBoxColumn.Width = 134;
-            // 
-            // skillNameDataGridViewTextBoxColumn
-            // 
-            this.skillNameDataGridViewTextBoxColumn.DataPropertyName = "Skill_Name";
-            this.skillNameDataGridViewTextBoxColumn.HeaderText = "Skill Name";
-            this.skillNameDataGridViewTextBoxColumn.Name = "skillNameDataGridViewTextBoxColumn";
-            this.skillNameDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.skillNameDataGridViewTextBoxColumn.Width = 82;
-            // 
             // playerclassskillBindingSource
             // 
             this.playerclassskillBindingSource.DataMember = "player_class_skill";
@@ -339,17 +324,61 @@
             this.handedItemIDDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.handedItemIDDataGridViewTextBoxColumn.ValueMember = "Item_Handed";
             // 
+            // items_catalogTableAdapter
+            // 
+            this.items_catalogTableAdapter.ClearBeforeFill = true;
+            // 
+            // rarityTableAdapter
+            // 
+            this.rarityTableAdapter.ClearBeforeFill = true;
+            // 
+            // item_typeTableAdapter
+            // 
+            this.item_typeTableAdapter.ClearBeforeFill = true;
+            // 
+            // handed_itemTableAdapter
+            // 
+            this.handed_itemTableAdapter.ClearBeforeFill = true;
+            // 
+            // player_on_serverTableAdapter
+            // 
+            this.player_on_serverTableAdapter.ClearBeforeFill = true;
+            // 
+            // player_class_skillTableAdapter
+            // 
+            this.player_class_skillTableAdapter.ClearBeforeFill = true;
+            // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.DataPropertyName = "Item_ID";
             this.dataGridViewTextBoxColumn1.HeaderText = "Item_ID";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.Visible = false;
+            this.dataGridViewTextBoxColumn1.Width = 134;
             // 
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.DataPropertyName = "Item_Name";
             this.dataGridViewTextBoxColumn2.HeaderText = "Item_Name";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn2.Width = 82;
+            // 
+            // playerClassSkillIDDataGridViewTextBoxColumn
+            // 
+            this.playerClassSkillIDDataGridViewTextBoxColumn.DataPropertyName = "Player_Class_Skill_ID";
+            this.playerClassSkillIDDataGridViewTextBoxColumn.HeaderText = "Player_Class_Skill_ID";
+            this.playerClassSkillIDDataGridViewTextBoxColumn.Name = "playerClassSkillIDDataGridViewTextBoxColumn";
+            this.playerClassSkillIDDataGridViewTextBoxColumn.Visible = false;
+            this.playerClassSkillIDDataGridViewTextBoxColumn.Width = 134;
+            // 
+            // skillNameDataGridViewTextBoxColumn
+            // 
+            this.skillNameDataGridViewTextBoxColumn.DataPropertyName = "Skill_Name";
+            this.skillNameDataGridViewTextBoxColumn.HeaderText = "Skill Name";
+            this.skillNameDataGridViewTextBoxColumn.Name = "skillNameDataGridViewTextBoxColumn";
+            this.skillNameDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.skillNameDataGridViewTextBoxColumn.Width = 82;
             // 
             // dataGridViewTextBoxColumn3
             // 
@@ -381,30 +410,6 @@
             this.dataGridViewTextBoxColumn7.HeaderText = "Handed_Item_ID";
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             // 
-            // items_catalogTableAdapter
-            // 
-            this.items_catalogTableAdapter.ClearBeforeFill = true;
-            // 
-            // rarityTableAdapter
-            // 
-            this.rarityTableAdapter.ClearBeforeFill = true;
-            // 
-            // item_typeTableAdapter
-            // 
-            this.item_typeTableAdapter.ClearBeforeFill = true;
-            // 
-            // handed_itemTableAdapter
-            // 
-            this.handed_itemTableAdapter.ClearBeforeFill = true;
-            // 
-            // player_on_serverTableAdapter
-            // 
-            this.player_on_serverTableAdapter.ClearBeforeFill = true;
-            // 
-            // player_class_skillTableAdapter
-            // 
-            this.player_class_skillTableAdapter.ClearBeforeFill = true;
-            // 
             // FormSkill
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -413,8 +418,10 @@
             this.ClientSize = new System.Drawing.Size(454, 450);
             this.Controls.Add(this.dataGridView_DB);
             this.Controls.Add(this.bindingNavigatorMain);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(450, 480);
             this.Name = "FormSkill";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Database viewer | Skills";
             this.Load += new System.EventHandler(this.FormSkill_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigatorMain)).EndInit();

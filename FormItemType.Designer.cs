@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormItemType));
             this.bindingNavigatorMain = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.itemtypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -51,8 +52,6 @@
             this.playeronserverBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.itemscatalogBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridView_DB = new System.Windows.Forms.DataGridView();
-            this.itemTypeIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.typeNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.playerclassskillBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.rarityBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.handeditemBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -67,6 +66,8 @@
             this.player_class_skillTableAdapter = new Game_Database_Viewer.gameDBDataSetTableAdapters.player_class_skillTableAdapter();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.itemTypeIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.typeNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -282,21 +283,6 @@
             this.dataGridView_DB.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dataGridView_DB_DataError);
             this.dataGridView_DB.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dataGridView_DB_RowPostPaint);
             // 
-            // itemTypeIDDataGridViewTextBoxColumn1
-            // 
-            this.itemTypeIDDataGridViewTextBoxColumn1.DataPropertyName = "Item_Type_ID";
-            this.itemTypeIDDataGridViewTextBoxColumn1.HeaderText = "Item_Type_ID";
-            this.itemTypeIDDataGridViewTextBoxColumn1.Name = "itemTypeIDDataGridViewTextBoxColumn1";
-            this.itemTypeIDDataGridViewTextBoxColumn1.Visible = false;
-            this.itemTypeIDDataGridViewTextBoxColumn1.Width = 99;
-            // 
-            // typeNameDataGridViewTextBoxColumn
-            // 
-            this.typeNameDataGridViewTextBoxColumn.DataPropertyName = "Type_Name";
-            this.typeNameDataGridViewTextBoxColumn.HeaderText = "Type Name";
-            this.typeNameDataGridViewTextBoxColumn.Name = "typeNameDataGridViewTextBoxColumn";
-            this.typeNameDataGridViewTextBoxColumn.Width = 87;
-            // 
             // playerclassskillBindingSource
             // 
             this.playerclassskillBindingSource.DataMember = "player_class_skill";
@@ -384,6 +370,21 @@
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.Width = 93;
             // 
+            // itemTypeIDDataGridViewTextBoxColumn1
+            // 
+            this.itemTypeIDDataGridViewTextBoxColumn1.DataPropertyName = "Item_Type_ID";
+            this.itemTypeIDDataGridViewTextBoxColumn1.HeaderText = "Item_Type_ID";
+            this.itemTypeIDDataGridViewTextBoxColumn1.Name = "itemTypeIDDataGridViewTextBoxColumn1";
+            this.itemTypeIDDataGridViewTextBoxColumn1.Visible = false;
+            this.itemTypeIDDataGridViewTextBoxColumn1.Width = 99;
+            // 
+            // typeNameDataGridViewTextBoxColumn
+            // 
+            this.typeNameDataGridViewTextBoxColumn.DataPropertyName = "Type_Name";
+            this.typeNameDataGridViewTextBoxColumn.HeaderText = "Type Name";
+            this.typeNameDataGridViewTextBoxColumn.Name = "typeNameDataGridViewTextBoxColumn";
+            this.typeNameDataGridViewTextBoxColumn.Width = 87;
+            // 
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.DataPropertyName = "Item_Durability";
@@ -422,8 +423,10 @@
             this.ClientSize = new System.Drawing.Size(454, 450);
             this.Controls.Add(this.dataGridView_DB);
             this.Controls.Add(this.bindingNavigatorMain);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(450, 480);
             this.Name = "FormItemType";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Database viewer | Item Type";
             this.Load += new System.EventHandler(this.FormItemType_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigatorMain)).EndInit();
