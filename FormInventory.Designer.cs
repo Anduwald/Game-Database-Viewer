@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormInventory));
             this.bindingNavigatorMain = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.inventoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -61,8 +60,16 @@
             this.player_on_serverTableAdapter = new Game_Database_Viewer.gameDBDataSetTableAdapters.player_on_serverTableAdapter();
             this.player_class_skillTableAdapter = new Game_Database_Viewer.gameDBDataSetTableAdapters.player_class_skillTableAdapter();
             this.dataGridView_DB = new System.Windows.Forms.DataGridView();
+            this.inventoryIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.uIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.itemIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.inventoryiteminfoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gameDBDataSet1 = new Game_Database_Viewer.gameDBDataSet();
+            this.equipedDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.questItemDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.damageDataGridViewTextBoxColumn = new NumericUpDownColumn();
+            this.manaCostDataGridViewTextBoxColumn = new NumericUpDownColumn();
+            this.hPCostDataGridViewTextBoxColumn = new NumericUpDownColumn();
             this.itemscatalogBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.inventoryTableAdapter = new Game_Database_Viewer.gameDBDataSetTableAdapters.inventoryTableAdapter();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -76,14 +83,6 @@
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.inventory_item_infoTableAdapter = new Game_Database_Viewer.gameDBDataSetTableAdapters.inventory_item_infoTableAdapter();
-            this.inventoryIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.uIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.itemIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.equipedDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.questItemDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.damageDataGridViewTextBoxColumn = new NumericUpDownColumn();
-            this.manaCostDataGridViewTextBoxColumn = new NumericUpDownColumn();
-            this.hPCostDataGridViewTextBoxColumn = new NumericUpDownColumn();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigatorMain)).BeginInit();
             this.bindingNavigatorMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.inventoryBindingSource)).BeginInit();
@@ -136,7 +135,7 @@
             // bindingNavigatorAddNewItem
             // 
             this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
+            this.bindingNavigatorAddNewItem.Image = global::Game_Database_Viewer.Properties.Resources.NewLine;
             this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 20);
@@ -162,7 +161,7 @@
             // bindingNavigatorDeleteItem
             // 
             this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Image = global::Game_Database_Viewer.Properties.Resources.Delete;
             this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 20);
@@ -171,7 +170,7 @@
             // bindingNavigatorMoveFirstItem
             // 
             this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
+            this.bindingNavigatorMoveFirstItem.Image = global::Game_Database_Viewer.Properties.Resources.LeftEnd;
             this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
             this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 20);
@@ -180,7 +179,7 @@
             // bindingNavigatorMovePreviousItem
             // 
             this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
+            this.bindingNavigatorMovePreviousItem.Image = global::Game_Database_Viewer.Properties.Resources.LeftNext;
             this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
             this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 20);
@@ -209,7 +208,7 @@
             // bindingNavigatorMoveNextItem
             // 
             this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
+            this.bindingNavigatorMoveNextItem.Image = global::Game_Database_Viewer.Properties.Resources.RightNext;
             this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
             this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 20);
@@ -218,7 +217,7 @@
             // bindingNavigatorMoveLastItem
             // 
             this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
+            this.bindingNavigatorMoveLastItem.Image = global::Game_Database_Viewer.Properties.Resources.RightEnd;
             this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
             this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 20);
@@ -232,7 +231,7 @@
             // toolStripButtonSave
             // 
             this.toolStripButtonSave.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonSave.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonSave.Image")));
+            this.toolStripButtonSave.Image = global::Game_Database_Viewer.Properties.Resources.Save;
             this.toolStripButtonSave.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonSave.Name = "toolStripButtonSave";
             this.toolStripButtonSave.Size = new System.Drawing.Size(23, 20);
@@ -352,6 +351,38 @@
             this.dataGridView_DB.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dataGridView_DB_DataError);
             this.dataGridView_DB.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dataGridView_DB_RowPostPaint);
             // 
+            // inventoryIDDataGridViewTextBoxColumn
+            // 
+            this.inventoryIDDataGridViewTextBoxColumn.DataPropertyName = "Inventory_ID";
+            this.inventoryIDDataGridViewTextBoxColumn.HeaderText = "Inventory_ID";
+            this.inventoryIDDataGridViewTextBoxColumn.Name = "inventoryIDDataGridViewTextBoxColumn";
+            this.inventoryIDDataGridViewTextBoxColumn.Visible = false;
+            this.inventoryIDDataGridViewTextBoxColumn.Width = 93;
+            // 
+            // uIDDataGridViewTextBoxColumn
+            // 
+            this.uIDDataGridViewTextBoxColumn.DataPropertyName = "UID";
+            this.uIDDataGridViewTextBoxColumn.DataSource = this.playeronserverBindingSource;
+            this.uIDDataGridViewTextBoxColumn.DisplayMember = "Player_Name";
+            this.uIDDataGridViewTextBoxColumn.HeaderText = "Player Name";
+            this.uIDDataGridViewTextBoxColumn.Name = "uIDDataGridViewTextBoxColumn";
+            this.uIDDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.uIDDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.uIDDataGridViewTextBoxColumn.ValueMember = "UID";
+            this.uIDDataGridViewTextBoxColumn.Width = 92;
+            // 
+            // itemIDDataGridViewTextBoxColumn
+            // 
+            this.itemIDDataGridViewTextBoxColumn.DataPropertyName = "Item_ID";
+            this.itemIDDataGridViewTextBoxColumn.DataSource = this.inventoryiteminfoBindingSource;
+            this.itemIDDataGridViewTextBoxColumn.DisplayMember = "Item_Full_Name";
+            this.itemIDDataGridViewTextBoxColumn.HeaderText = "Item Name";
+            this.itemIDDataGridViewTextBoxColumn.Name = "itemIDDataGridViewTextBoxColumn";
+            this.itemIDDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.itemIDDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.itemIDDataGridViewTextBoxColumn.ValueMember = "Item_ID";
+            this.itemIDDataGridViewTextBoxColumn.Width = 83;
+            // 
             // inventoryiteminfoBindingSource
             // 
             this.inventoryiteminfoBindingSource.DataMember = "inventory_item_info";
@@ -361,6 +392,47 @@
             // 
             this.gameDBDataSet1.DataSetName = "gameDBDataSet";
             this.gameDBDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // equipedDataGridViewCheckBoxColumn
+            // 
+            this.equipedDataGridViewCheckBoxColumn.DataPropertyName = "Equiped";
+            this.equipedDataGridViewCheckBoxColumn.HeaderText = "Equiped";
+            this.equipedDataGridViewCheckBoxColumn.Name = "equipedDataGridViewCheckBoxColumn";
+            this.equipedDataGridViewCheckBoxColumn.Width = 52;
+            // 
+            // questItemDataGridViewCheckBoxColumn
+            // 
+            this.questItemDataGridViewCheckBoxColumn.DataPropertyName = "Quest_Item";
+            this.questItemDataGridViewCheckBoxColumn.HeaderText = "Quest_Item";
+            this.questItemDataGridViewCheckBoxColumn.Name = "questItemDataGridViewCheckBoxColumn";
+            this.questItemDataGridViewCheckBoxColumn.Width = 67;
+            // 
+            // damageDataGridViewTextBoxColumn
+            // 
+            this.damageDataGridViewTextBoxColumn.DataPropertyName = "Damage";
+            this.damageDataGridViewTextBoxColumn.HeaderText = "Damage";
+            this.damageDataGridViewTextBoxColumn.Name = "damageDataGridViewTextBoxColumn";
+            this.damageDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.damageDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.damageDataGridViewTextBoxColumn.Width = 72;
+            // 
+            // manaCostDataGridViewTextBoxColumn
+            // 
+            this.manaCostDataGridViewTextBoxColumn.DataPropertyName = "Mana_Cost";
+            this.manaCostDataGridViewTextBoxColumn.HeaderText = "Mana Cost";
+            this.manaCostDataGridViewTextBoxColumn.Name = "manaCostDataGridViewTextBoxColumn";
+            this.manaCostDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.manaCostDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.manaCostDataGridViewTextBoxColumn.Width = 83;
+            // 
+            // hPCostDataGridViewTextBoxColumn
+            // 
+            this.hPCostDataGridViewTextBoxColumn.DataPropertyName = "HP_Cost";
+            this.hPCostDataGridViewTextBoxColumn.HeaderText = "HP Cost";
+            this.hPCostDataGridViewTextBoxColumn.Name = "hPCostDataGridViewTextBoxColumn";
+            this.hPCostDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.hPCostDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.hPCostDataGridViewTextBoxColumn.Width = 71;
             // 
             // itemscatalogBindingSource1
             // 
@@ -447,79 +519,6 @@
             // inventory_item_infoTableAdapter
             // 
             this.inventory_item_infoTableAdapter.ClearBeforeFill = true;
-            // 
-            // inventoryIDDataGridViewTextBoxColumn
-            // 
-            this.inventoryIDDataGridViewTextBoxColumn.DataPropertyName = "Inventory_ID";
-            this.inventoryIDDataGridViewTextBoxColumn.HeaderText = "Inventory_ID";
-            this.inventoryIDDataGridViewTextBoxColumn.Name = "inventoryIDDataGridViewTextBoxColumn";
-            this.inventoryIDDataGridViewTextBoxColumn.Visible = false;
-            this.inventoryIDDataGridViewTextBoxColumn.Width = 93;
-            // 
-            // uIDDataGridViewTextBoxColumn
-            // 
-            this.uIDDataGridViewTextBoxColumn.DataPropertyName = "UID";
-            this.uIDDataGridViewTextBoxColumn.DataSource = this.playeronserverBindingSource;
-            this.uIDDataGridViewTextBoxColumn.DisplayMember = "Player_Name";
-            this.uIDDataGridViewTextBoxColumn.HeaderText = "Player Name";
-            this.uIDDataGridViewTextBoxColumn.Name = "uIDDataGridViewTextBoxColumn";
-            this.uIDDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.uIDDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.uIDDataGridViewTextBoxColumn.ValueMember = "UID";
-            this.uIDDataGridViewTextBoxColumn.Width = 92;
-            // 
-            // itemIDDataGridViewTextBoxColumn
-            // 
-            this.itemIDDataGridViewTextBoxColumn.DataPropertyName = "Item_ID";
-            this.itemIDDataGridViewTextBoxColumn.DataSource = this.inventoryiteminfoBindingSource;
-            this.itemIDDataGridViewTextBoxColumn.DisplayMember = "Item_Full_Name";
-            this.itemIDDataGridViewTextBoxColumn.HeaderText = "Item Name";
-            this.itemIDDataGridViewTextBoxColumn.Name = "itemIDDataGridViewTextBoxColumn";
-            this.itemIDDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.itemIDDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.itemIDDataGridViewTextBoxColumn.ValueMember = "Item_ID";
-            this.itemIDDataGridViewTextBoxColumn.Width = 83;
-            // 
-            // equipedDataGridViewCheckBoxColumn
-            // 
-            this.equipedDataGridViewCheckBoxColumn.DataPropertyName = "Equiped";
-            this.equipedDataGridViewCheckBoxColumn.HeaderText = "Equiped";
-            this.equipedDataGridViewCheckBoxColumn.Name = "equipedDataGridViewCheckBoxColumn";
-            this.equipedDataGridViewCheckBoxColumn.Width = 52;
-            // 
-            // questItemDataGridViewCheckBoxColumn
-            // 
-            this.questItemDataGridViewCheckBoxColumn.DataPropertyName = "Quest_Item";
-            this.questItemDataGridViewCheckBoxColumn.HeaderText = "Quest_Item";
-            this.questItemDataGridViewCheckBoxColumn.Name = "questItemDataGridViewCheckBoxColumn";
-            this.questItemDataGridViewCheckBoxColumn.Width = 67;
-            // 
-            // damageDataGridViewTextBoxColumn
-            // 
-            this.damageDataGridViewTextBoxColumn.DataPropertyName = "Damage";
-            this.damageDataGridViewTextBoxColumn.HeaderText = "Damage";
-            this.damageDataGridViewTextBoxColumn.Name = "damageDataGridViewTextBoxColumn";
-            this.damageDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.damageDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.damageDataGridViewTextBoxColumn.Width = 72;
-            // 
-            // manaCostDataGridViewTextBoxColumn
-            // 
-            this.manaCostDataGridViewTextBoxColumn.DataPropertyName = "Mana_Cost";
-            this.manaCostDataGridViewTextBoxColumn.HeaderText = "Mana Cost";
-            this.manaCostDataGridViewTextBoxColumn.Name = "manaCostDataGridViewTextBoxColumn";
-            this.manaCostDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.manaCostDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.manaCostDataGridViewTextBoxColumn.Width = 83;
-            // 
-            // hPCostDataGridViewTextBoxColumn
-            // 
-            this.hPCostDataGridViewTextBoxColumn.DataPropertyName = "HP_Cost";
-            this.hPCostDataGridViewTextBoxColumn.HeaderText = "HP Cost";
-            this.hPCostDataGridViewTextBoxColumn.Name = "hPCostDataGridViewTextBoxColumn";
-            this.hPCostDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.hPCostDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.hPCostDataGridViewTextBoxColumn.Width = 71;
             // 
             // FormInventory
             // 

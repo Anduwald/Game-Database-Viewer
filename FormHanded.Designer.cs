@@ -29,10 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormHanded));
             this.bindingNavigatorMain = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.rarityBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.handeditemBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gameDBDataSet = new Game_Database_Viewer.gameDBDataSet();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
@@ -47,14 +46,16 @@
             this.toolStripLabelSearch_Field = new System.Windows.Forms.ToolStripLabel();
             this.toolStripTextBoxSearch_Field = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripButtonSave = new System.Windows.Forms.ToolStripButton();
+            this.rarityBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.playerclassskillBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.playeronserverBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.itemscatalogBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridView_DB = new System.Windows.Forms.DataGridView();
+            this.handedItemIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.itemHandedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.playerclassskillBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.rarityBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.itemtypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.handeditemBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.rarityIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.itemTypeIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.handedItemIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
@@ -71,12 +72,11 @@
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.handedItemIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.itemHandedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigatorMain)).BeginInit();
             this.bindingNavigatorMain.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.rarityBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.handeditemBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gameDBDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rarityBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.playerclassskillBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.playeronserverBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.itemscatalogBindingSource)).BeginInit();
@@ -84,7 +84,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.playerclassskillBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rarityBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.itemtypeBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.handeditemBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // bindingNavigatorMain
@@ -125,16 +124,16 @@
             // bindingNavigatorAddNewItem
             // 
             this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
+            this.bindingNavigatorAddNewItem.Image = global::Game_Database_Viewer.Properties.Resources.NewLine;
             this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 20);
             this.bindingNavigatorAddNewItem.Text = "Add new";
             // 
-            // rarityBindingSource1
+            // handeditemBindingSource
             // 
-            this.rarityBindingSource1.DataMember = "rarity";
-            this.rarityBindingSource1.DataSource = this.gameDBDataSet;
+            this.handeditemBindingSource.DataMember = "handed_item";
+            this.handeditemBindingSource.DataSource = this.gameDBDataSet;
             // 
             // gameDBDataSet
             // 
@@ -151,7 +150,7 @@
             // bindingNavigatorDeleteItem
             // 
             this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Image = global::Game_Database_Viewer.Properties.Resources.Delete;
             this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 20);
@@ -160,7 +159,7 @@
             // bindingNavigatorMoveFirstItem
             // 
             this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
+            this.bindingNavigatorMoveFirstItem.Image = global::Game_Database_Viewer.Properties.Resources.LeftEnd;
             this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
             this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 20);
@@ -169,7 +168,7 @@
             // bindingNavigatorMovePreviousItem
             // 
             this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
+            this.bindingNavigatorMovePreviousItem.Image = global::Game_Database_Viewer.Properties.Resources.LeftNext;
             this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
             this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 20);
@@ -198,7 +197,7 @@
             // bindingNavigatorMoveNextItem
             // 
             this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
+            this.bindingNavigatorMoveNextItem.Image = global::Game_Database_Viewer.Properties.Resources.RightNext;
             this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
             this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 20);
@@ -207,7 +206,7 @@
             // bindingNavigatorMoveLastItem
             // 
             this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
+            this.bindingNavigatorMoveLastItem.Image = global::Game_Database_Viewer.Properties.Resources.RightEnd;
             this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
             this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 20);
@@ -235,12 +234,17 @@
             // toolStripButtonSave
             // 
             this.toolStripButtonSave.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonSave.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonSave.Image")));
+            this.toolStripButtonSave.Image = global::Game_Database_Viewer.Properties.Resources.Save;
             this.toolStripButtonSave.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonSave.Name = "toolStripButtonSave";
             this.toolStripButtonSave.Size = new System.Drawing.Size(23, 20);
             this.toolStripButtonSave.Text = "Save";
             this.toolStripButtonSave.Click += new System.EventHandler(this.toolStripButtonSave_Click);
+            // 
+            // rarityBindingSource1
+            // 
+            this.rarityBindingSource1.DataMember = "rarity";
+            this.rarityBindingSource1.DataSource = this.gameDBDataSet;
             // 
             // playerclassskillBindingSource1
             // 
@@ -278,6 +282,21 @@
             this.dataGridView_DB.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dataGridView_DB_DataError);
             this.dataGridView_DB.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dataGridView_DB_RowPostPaint);
             // 
+            // handedItemIDDataGridViewTextBoxColumn1
+            // 
+            this.handedItemIDDataGridViewTextBoxColumn1.DataPropertyName = "Handed_Item_ID";
+            this.handedItemIDDataGridViewTextBoxColumn1.HeaderText = "Handed_Item_ID";
+            this.handedItemIDDataGridViewTextBoxColumn1.Name = "handedItemIDDataGridViewTextBoxColumn1";
+            this.handedItemIDDataGridViewTextBoxColumn1.Visible = false;
+            this.handedItemIDDataGridViewTextBoxColumn1.Width = 113;
+            // 
+            // itemHandedDataGridViewTextBoxColumn
+            // 
+            this.itemHandedDataGridViewTextBoxColumn.DataPropertyName = "Item_Handed";
+            this.itemHandedDataGridViewTextBoxColumn.HeaderText = "Item Handed";
+            this.itemHandedDataGridViewTextBoxColumn.Name = "itemHandedDataGridViewTextBoxColumn";
+            this.itemHandedDataGridViewTextBoxColumn.Width = 93;
+            // 
             // playerclassskillBindingSource
             // 
             this.playerclassskillBindingSource.DataMember = "player_class_skill";
@@ -292,11 +311,6 @@
             // 
             this.itemtypeBindingSource.DataMember = "item_type";
             this.itemtypeBindingSource.DataSource = this.gameDBDataSet;
-            // 
-            // handeditemBindingSource
-            // 
-            this.handeditemBindingSource.DataMember = "handed_item";
-            this.handeditemBindingSource.DataSource = this.gameDBDataSet;
             // 
             // rarityIDDataGridViewTextBoxColumn
             // 
@@ -400,21 +414,6 @@
             this.dataGridViewTextBoxColumn7.HeaderText = "Handed_Item_ID";
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             // 
-            // handedItemIDDataGridViewTextBoxColumn1
-            // 
-            this.handedItemIDDataGridViewTextBoxColumn1.DataPropertyName = "Handed_Item_ID";
-            this.handedItemIDDataGridViewTextBoxColumn1.HeaderText = "Handed_Item_ID";
-            this.handedItemIDDataGridViewTextBoxColumn1.Name = "handedItemIDDataGridViewTextBoxColumn1";
-            this.handedItemIDDataGridViewTextBoxColumn1.Visible = false;
-            this.handedItemIDDataGridViewTextBoxColumn1.Width = 113;
-            // 
-            // itemHandedDataGridViewTextBoxColumn
-            // 
-            this.itemHandedDataGridViewTextBoxColumn.DataPropertyName = "Item_Handed";
-            this.itemHandedDataGridViewTextBoxColumn.HeaderText = "Item Handed";
-            this.itemHandedDataGridViewTextBoxColumn.Name = "itemHandedDataGridViewTextBoxColumn";
-            this.itemHandedDataGridViewTextBoxColumn.Width = 93;
-            // 
             // FormHanded
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -430,8 +429,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigatorMain)).EndInit();
             this.bindingNavigatorMain.ResumeLayout(false);
             this.bindingNavigatorMain.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.rarityBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.handeditemBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gameDBDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rarityBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.playerclassskillBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.playeronserverBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.itemscatalogBindingSource)).EndInit();
@@ -439,7 +439,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.playerclassskillBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rarityBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.itemtypeBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.handeditemBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

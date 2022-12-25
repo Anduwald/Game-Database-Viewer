@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.menuStripMain = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -43,24 +42,9 @@
             this.itemRarityToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.itemTypeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.itemHandedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.bindingNavigatorMain = new System.Windows.Forms.BindingNavigator(this.components);
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.itemscatalogBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.generalinfoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gameDBDataSet = new Game_Database_Viewer.gameDBDataSet();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripLabelSearch_Field = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripTextBoxSearch_Field = new System.Windows.Forms.ToolStripTextBox();
-            this.toolStripButtonSave = new System.Windows.Forms.ToolStripButton();
-            this.dataGridView_DB = new System.Windows.Forms.DataGridView();
+            this.itemscatalogBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.rarityBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.itemtypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.handeditemBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -74,6 +58,7 @@
             this.rarityTableAdapter = new Game_Database_Viewer.gameDBDataSetTableAdapters.rarityTableAdapter();
             this.item_typeTableAdapter = new Game_Database_Viewer.gameDBDataSetTableAdapters.item_typeTableAdapter();
             this.handed_itemTableAdapter = new Game_Database_Viewer.gameDBDataSetTableAdapters.handed_itemTableAdapter();
+            this.general_infoTableAdapter = new Game_Database_Viewer.gameDBDataSetTableAdapters.general_infoTableAdapter();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -81,23 +66,15 @@
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.generalinfoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.general_infoTableAdapter = new Game_Database_Viewer.gameDBDataSetTableAdapters.general_infoTableAdapter();
-            this.uIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.playerNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.playerLevelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.skillNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label1 = new System.Windows.Forms.Label();
             this.menuStripMain.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingNavigatorMain)).BeginInit();
-            this.bindingNavigatorMain.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.itemscatalogBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.generalinfoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gameDBDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_DB)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.itemscatalogBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rarityBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.itemtypeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.handeditemBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_SQL)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.generalinfoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStripMain
@@ -153,234 +130,74 @@
             this.itemRarityToolStripMenuItem,
             this.itemTypeToolStripMenuItem,
             this.itemHandedToolStripMenuItem});
+            this.tablesToolStripMenuItem.Image = global::Game_Database_Viewer.Properties.Resources.NewWindow;
             this.tablesToolStripMenuItem.Name = "tablesToolStripMenuItem";
-            this.tablesToolStripMenuItem.Size = new System.Drawing.Size(51, 20);
+            this.tablesToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
             this.tablesToolStripMenuItem.Text = "Tables";
             // 
             // playerOnServerToolStripMenuItem
             // 
             this.playerOnServerToolStripMenuItem.Name = "playerOnServerToolStripMenuItem";
-            this.playerOnServerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.playerOnServerToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.playerOnServerToolStripMenuItem.Text = "Player On Server";
             this.playerOnServerToolStripMenuItem.Click += new System.EventHandler(this.playerOnServerToolStripMenuItem_Click);
             // 
             // playerClassSkillToolStripMenuItem
             // 
             this.playerClassSkillToolStripMenuItem.Name = "playerClassSkillToolStripMenuItem";
-            this.playerClassSkillToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.playerClassSkillToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.playerClassSkillToolStripMenuItem.Text = "Player Class Skill";
             this.playerClassSkillToolStripMenuItem.Click += new System.EventHandler(this.playerClassSkillToolStripMenuItem_Click);
             // 
             // inventoryToolStripMenuItem
             // 
             this.inventoryToolStripMenuItem.Name = "inventoryToolStripMenuItem";
-            this.inventoryToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.inventoryToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.inventoryToolStripMenuItem.Text = "Inventory";
             this.inventoryToolStripMenuItem.Click += new System.EventHandler(this.inventoryToolStripMenuItem_Click);
             // 
             // itemsCatalogToolStripMenuItem
             // 
             this.itemsCatalogToolStripMenuItem.Name = "itemsCatalogToolStripMenuItem";
-            this.itemsCatalogToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.itemsCatalogToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.itemsCatalogToolStripMenuItem.Text = "Items Catalog";
             this.itemsCatalogToolStripMenuItem.Click += new System.EventHandler(this.itemsCatalogToolStripMenuItem_Click);
             // 
             // itemRarityToolStripMenuItem
             // 
             this.itemRarityToolStripMenuItem.Name = "itemRarityToolStripMenuItem";
-            this.itemRarityToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.itemRarityToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.itemRarityToolStripMenuItem.Text = "Item Rarity";
             this.itemRarityToolStripMenuItem.Click += new System.EventHandler(this.itemRarityToolStripMenuItem_Click);
             // 
             // itemTypeToolStripMenuItem
             // 
             this.itemTypeToolStripMenuItem.Name = "itemTypeToolStripMenuItem";
-            this.itemTypeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.itemTypeToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.itemTypeToolStripMenuItem.Text = "Item Type";
             this.itemTypeToolStripMenuItem.Click += new System.EventHandler(this.itemTypeToolStripMenuItem_Click);
             // 
             // itemHandedToolStripMenuItem
             // 
             this.itemHandedToolStripMenuItem.Name = "itemHandedToolStripMenuItem";
-            this.itemHandedToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.itemHandedToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.itemHandedToolStripMenuItem.Text = "Item Handed";
             this.itemHandedToolStripMenuItem.Click += new System.EventHandler(this.itemHandedToolStripMenuItem_Click);
             // 
-            // bindingNavigatorMain
+            // generalinfoBindingSource
             // 
-            this.bindingNavigatorMain.AddNewItem = this.bindingNavigatorAddNewItem;
-            this.bindingNavigatorMain.BackColor = System.Drawing.Color.CadetBlue;
-            this.bindingNavigatorMain.BindingSource = this.itemscatalogBindingSource;
-            this.bindingNavigatorMain.CountItem = this.bindingNavigatorCountItem;
-            this.bindingNavigatorMain.DeleteItem = this.bindingNavigatorDeleteItem;
-            this.bindingNavigatorMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.bindingNavigatorMoveFirstItem,
-            this.bindingNavigatorMovePreviousItem,
-            this.bindingNavigatorSeparator,
-            this.bindingNavigatorPositionItem,
-            this.bindingNavigatorCountItem,
-            this.bindingNavigatorSeparator1,
-            this.bindingNavigatorMoveNextItem,
-            this.bindingNavigatorMoveLastItem,
-            this.bindingNavigatorSeparator2,
-            this.bindingNavigatorAddNewItem,
-            this.bindingNavigatorDeleteItem,
-            this.toolStripLabelSearch_Field,
-            this.toolStripTextBoxSearch_Field,
-            this.toolStripButtonSave});
-            this.bindingNavigatorMain.Location = new System.Drawing.Point(0, 24);
-            this.bindingNavigatorMain.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
-            this.bindingNavigatorMain.MoveLastItem = this.bindingNavigatorMoveLastItem;
-            this.bindingNavigatorMain.MoveNextItem = this.bindingNavigatorMoveNextItem;
-            this.bindingNavigatorMain.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
-            this.bindingNavigatorMain.Name = "bindingNavigatorMain";
-            this.bindingNavigatorMain.Padding = new System.Windows.Forms.Padding(0, 2, 1, 4);
-            this.bindingNavigatorMain.PositionItem = this.bindingNavigatorPositionItem;
-            this.bindingNavigatorMain.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.bindingNavigatorMain.Size = new System.Drawing.Size(800, 29);
-            this.bindingNavigatorMain.TabIndex = 1;
-            this.bindingNavigatorMain.Text = "bindingNavigator1";
-            // 
-            // bindingNavigatorAddNewItem
-            // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 20);
-            this.bindingNavigatorAddNewItem.Text = "Add new";
-            // 
-            // itemscatalogBindingSource
-            // 
-            this.itemscatalogBindingSource.DataMember = "items_catalog";
-            this.itemscatalogBindingSource.DataSource = this.gameDBDataSet;
+            this.generalinfoBindingSource.DataMember = "general_info";
+            this.generalinfoBindingSource.DataSource = this.gameDBDataSet;
             // 
             // gameDBDataSet
             // 
             this.gameDBDataSet.DataSetName = "gameDBDataSet";
             this.gameDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // bindingNavigatorCountItem
+            // itemscatalogBindingSource
             // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 20);
-            this.bindingNavigatorCountItem.Text = "of {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 20);
-            this.bindingNavigatorDeleteItem.Text = "Delete";
-            // 
-            // bindingNavigatorMoveFirstItem
-            // 
-            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
-            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
-            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 20);
-            this.bindingNavigatorMoveFirstItem.Text = "Move first";
-            // 
-            // bindingNavigatorMovePreviousItem
-            // 
-            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
-            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
-            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 20);
-            this.bindingNavigatorMovePreviousItem.Text = "Move previous";
-            // 
-            // bindingNavigatorSeparator
-            // 
-            this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 23);
-            // 
-            // bindingNavigatorPositionItem
-            // 
-            this.bindingNavigatorPositionItem.AccessibleName = "Position";
-            this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
-            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
-            this.bindingNavigatorPositionItem.Text = "0";
-            this.bindingNavigatorPositionItem.ToolTipText = "Current position";
-            // 
-            // bindingNavigatorSeparator1
-            // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 23);
-            // 
-            // bindingNavigatorMoveNextItem
-            // 
-            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
-            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
-            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 20);
-            this.bindingNavigatorMoveNextItem.Text = "Move next";
-            // 
-            // bindingNavigatorMoveLastItem
-            // 
-            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
-            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
-            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 20);
-            this.bindingNavigatorMoveLastItem.Text = "Move last";
-            // 
-            // bindingNavigatorSeparator2
-            // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 23);
-            // 
-            // toolStripLabelSearch_Field
-            // 
-            this.toolStripLabelSearch_Field.Name = "toolStripLabelSearch_Field";
-            this.toolStripLabelSearch_Field.Size = new System.Drawing.Size(42, 20);
-            this.toolStripLabelSearch_Field.Text = "Search";
-            // 
-            // toolStripTextBoxSearch_Field
-            // 
-            this.toolStripTextBoxSearch_Field.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.toolStripTextBoxSearch_Field.Name = "toolStripTextBoxSearch_Field";
-            this.toolStripTextBoxSearch_Field.Size = new System.Drawing.Size(100, 23);
-            this.toolStripTextBoxSearch_Field.TextChanged += new System.EventHandler(this.toolStripTextBoxSearch_Field_TextChanged);
-            // 
-            // toolStripButtonSave
-            // 
-            this.toolStripButtonSave.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonSave.Image = global::Game_Database_Viewer.Properties.Resources.Save;
-            this.toolStripButtonSave.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonSave.Name = "toolStripButtonSave";
-            this.toolStripButtonSave.Size = new System.Drawing.Size(23, 20);
-            this.toolStripButtonSave.Text = "Save";
-            this.toolStripButtonSave.Click += new System.EventHandler(this.toolStripButtonSave_Click);
-            // 
-            // dataGridView_DB
-            // 
-            this.dataGridView_DB.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView_DB.AutoGenerateColumns = false;
-            this.dataGridView_DB.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dataGridView_DB.BackgroundColor = System.Drawing.SystemColors.Window;
-            this.dataGridView_DB.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_DB.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.uIDDataGridViewTextBoxColumn,
-            this.playerNameDataGridViewTextBoxColumn,
-            this.playerLevelDataGridViewTextBoxColumn,
-            this.skillNameDataGridViewTextBoxColumn});
-            this.dataGridView_DB.DataSource = this.generalinfoBindingSource;
-            this.dataGridView_DB.Location = new System.Drawing.Point(12, 56);
-            this.dataGridView_DB.Name = "dataGridView_DB";
-            this.dataGridView_DB.ReadOnly = true;
-            this.dataGridView_DB.Size = new System.Drawing.Size(776, 169);
-            this.dataGridView_DB.TabIndex = 2;
-            this.dataGridView_DB.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_DB_CellEndEdit);
-            this.dataGridView_DB.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dataGridView_DB_DataError);
-            this.dataGridView_DB.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dataGridView_DB_RowPostPaint);
+            this.itemscatalogBindingSource.DataMember = "items_catalog";
+            this.itemscatalogBindingSource.DataSource = this.gameDBDataSet;
             // 
             // rarityBindingSource
             // 
@@ -404,10 +221,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView_SQL.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dataGridView_SQL.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_SQL.Location = new System.Drawing.Point(13, 232);
+            this.dataGridView_SQL.Location = new System.Drawing.Point(13, 55);
             this.dataGridView_SQL.Name = "dataGridView_SQL";
             this.dataGridView_SQL.ReadOnly = true;
-            this.dataGridView_SQL.Size = new System.Drawing.Size(775, 180);
+            this.dataGridView_SQL.Size = new System.Drawing.Size(775, 357);
             this.dataGridView_SQL.TabIndex = 3;
             // 
             // textBox_SQL
@@ -480,29 +297,41 @@
             // 
             this.handed_itemTableAdapter.ClearBeforeFill = true;
             // 
+            // general_infoTableAdapter
+            // 
+            this.general_infoTableAdapter.ClearBeforeFill = true;
+            // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.DataPropertyName = "Item_ID";
             this.dataGridViewTextBoxColumn1.HeaderText = "Item_ID";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 51;
             // 
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.DataPropertyName = "Item_Name";
             this.dataGridViewTextBoxColumn2.HeaderText = "Item_Name";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Width = 95;
             // 
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.DataPropertyName = "Item_Durability";
             this.dataGridViewTextBoxColumn3.HeaderText = "Item_Durability";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Width = 93;
             // 
             // dataGridViewTextBoxColumn4
             // 
             this.dataGridViewTextBoxColumn4.DataPropertyName = "Item_Cost";
             this.dataGridViewTextBoxColumn4.HeaderText = "Item_Cost";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.Width = 85;
             // 
             // dataGridViewTextBoxColumn5
             // 
@@ -522,46 +351,19 @@
             this.dataGridViewTextBoxColumn7.HeaderText = "Handed_Item_ID";
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             // 
-            // generalinfoBindingSource
+            // label1
             // 
-            this.generalinfoBindingSource.DataMember = "general_info";
-            this.generalinfoBindingSource.DataSource = this.gameDBDataSet;
-            // 
-            // general_infoTableAdapter
-            // 
-            this.general_infoTableAdapter.ClearBeforeFill = true;
-            // 
-            // uIDDataGridViewTextBoxColumn
-            // 
-            this.uIDDataGridViewTextBoxColumn.DataPropertyName = "UID";
-            this.uIDDataGridViewTextBoxColumn.HeaderText = "UID";
-            this.uIDDataGridViewTextBoxColumn.Name = "uIDDataGridViewTextBoxColumn";
-            this.uIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.uIDDataGridViewTextBoxColumn.Width = 51;
-            // 
-            // playerNameDataGridViewTextBoxColumn
-            // 
-            this.playerNameDataGridViewTextBoxColumn.DataPropertyName = "Player_Name";
-            this.playerNameDataGridViewTextBoxColumn.HeaderText = "Player_Name";
-            this.playerNameDataGridViewTextBoxColumn.Name = "playerNameDataGridViewTextBoxColumn";
-            this.playerNameDataGridViewTextBoxColumn.ReadOnly = true;
-            this.playerNameDataGridViewTextBoxColumn.Width = 95;
-            // 
-            // playerLevelDataGridViewTextBoxColumn
-            // 
-            this.playerLevelDataGridViewTextBoxColumn.DataPropertyName = "Player_Level";
-            this.playerLevelDataGridViewTextBoxColumn.HeaderText = "Player_Level";
-            this.playerLevelDataGridViewTextBoxColumn.Name = "playerLevelDataGridViewTextBoxColumn";
-            this.playerLevelDataGridViewTextBoxColumn.ReadOnly = true;
-            this.playerLevelDataGridViewTextBoxColumn.Width = 93;
-            // 
-            // skillNameDataGridViewTextBoxColumn
-            // 
-            this.skillNameDataGridViewTextBoxColumn.DataPropertyName = "Skill_Name";
-            this.skillNameDataGridViewTextBoxColumn.HeaderText = "Skill_Name";
-            this.skillNameDataGridViewTextBoxColumn.Name = "skillNameDataGridViewTextBoxColumn";
-            this.skillNameDataGridViewTextBoxColumn.ReadOnly = true;
-            this.skillNameDataGridViewTextBoxColumn.Width = 85;
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(13, 28);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(222, 24);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Custom query result table";
             // 
             // FormMain
             // 
@@ -569,31 +371,25 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkTurquoise;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.button_SQL);
             this.Controls.Add(this.textBox_SQL);
             this.Controls.Add(this.dataGridView_SQL);
-            this.Controls.Add(this.dataGridView_DB);
-            this.Controls.Add(this.bindingNavigatorMain);
             this.Controls.Add(this.menuStripMain);
             this.MainMenuStrip = this.menuStripMain;
             this.MinimumSize = new System.Drawing.Size(800, 480);
             this.Name = "FormMain";
             this.Text = "Database viewer";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormMain_FormClosing);
-            this.Load += new System.EventHandler(this.FormMain_Load);
             this.menuStripMain.ResumeLayout(false);
             this.menuStripMain.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingNavigatorMain)).EndInit();
-            this.bindingNavigatorMain.ResumeLayout(false);
-            this.bindingNavigatorMain.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.itemscatalogBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.generalinfoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gameDBDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_DB)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.itemscatalogBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rarityBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.itemtypeBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.handeditemBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_SQL)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.generalinfoBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -614,22 +410,6 @@
         private System.Windows.Forms.ToolStripMenuItem itemRarityToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem itemTypeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem itemHandedToolStripMenuItem;
-        private System.Windows.Forms.BindingNavigator bindingNavigatorMain;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
-        private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
-        private System.Windows.Forms.ToolStripTextBox bindingNavigatorPositionItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator1;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
-        private System.Windows.Forms.ToolStripLabel toolStripLabelSearch_Field;
-        private System.Windows.Forms.ToolStripTextBox toolStripTextBoxSearch_Field;
-        private System.Windows.Forms.ToolStripButton toolStripButtonSave;
-        private System.Windows.Forms.DataGridView dataGridView_DB;
         private gameDBDataSet gameDBDataSet;
         private gameDBDataSetTableAdapters.items_catalogTableAdapter items_catalogTableAdapter;
         private System.Windows.Forms.DataGridView dataGridView_SQL;
@@ -654,10 +434,7 @@
         private System.Windows.Forms.BindingSource itemscatalogBindingSource;
         private System.Windows.Forms.BindingSource generalinfoBindingSource;
         private gameDBDataSetTableAdapters.general_infoTableAdapter general_infoTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn uIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn playerNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn playerLevelDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn skillNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Label label1;
     }
 }
 

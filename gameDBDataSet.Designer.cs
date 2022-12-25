@@ -3219,7 +3219,7 @@ namespace Game_Database_Viewer {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public general_infoRow Addgeneral_infoRow(short UID, string Player_Name, double Player_Level, string Skill_Name) {
+            public general_infoRow Addgeneral_infoRow(int UID, string Player_Name, int Player_Level, string Skill_Name) {
                 general_infoRow rowgeneral_infoRow = ((general_infoRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         UID,
@@ -3257,11 +3257,11 @@ namespace Game_Database_Viewer {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             private void InitClass() {
-                this.columnUID = new global::System.Data.DataColumn("UID", typeof(short), null, global::System.Data.MappingType.Element);
+                this.columnUID = new global::System.Data.DataColumn("UID", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnUID);
                 this.columnPlayer_Name = new global::System.Data.DataColumn("Player_Name", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPlayer_Name);
-                this.columnPlayer_Level = new global::System.Data.DataColumn("Player_Level", typeof(double), null, global::System.Data.MappingType.Element);
+                this.columnPlayer_Level = new global::System.Data.DataColumn("Player_Level", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPlayer_Level);
                 this.columnSkill_Name = new global::System.Data.DataColumn("Skill_Name", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSkill_Name);
@@ -4562,10 +4562,10 @@ namespace Game_Database_Viewer {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public short UID {
+            public int UID {
                 get {
                     try {
-                        return ((short)(this[this.tablegeneral_info.UIDColumn]));
+                        return ((int)(this[this.tablegeneral_info.UIDColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'UID\' in table \'general_info\' is DBNull.", e);
@@ -4594,10 +4594,10 @@ namespace Game_Database_Viewer {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public double Player_Level {
+            public int Player_Level {
                 get {
                     try {
-                        return ((double)(this[this.tablegeneral_info.Player_LevelColumn]));
+                        return ((int)(this[this.tablegeneral_info.Player_LevelColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'Player_Level\' in table \'general_info\' is DBNull.", e);

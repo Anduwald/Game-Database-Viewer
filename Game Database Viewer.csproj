@@ -71,6 +71,12 @@
     <Compile Include="FormItemType.Designer.cs">
       <DependentUpon>FormItemType.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLogin.Designer.cs">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormRarity.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,6 +122,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormItemType.resx">
       <DependentUpon>FormItemType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormLogin.resx">
+      <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormRarity.resx">
       <DependentUpon>FormRarity.cs</DependentUpon>
@@ -165,6 +174,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="gameDB.mdb" />
+    <None Include="icon\NewWindow.png" />
+    <None Include="icon\LeftEnd.png" />
+    <None Include="icon\LeftNext.png" />
+    <None Include="icon\RightEnd.png" />
+    <None Include="icon\RightNext.png" />
+    <None Include="icon\NewLine.png" />
+    <None Include="icon\Delete.png" />
     <None Include="icon\Save.png" />
     <None Include="icon\Quit.png" />
     <None Include="icon\About.png" />
