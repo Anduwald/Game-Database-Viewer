@@ -1,9 +1,7 @@
-﻿using Game_Database_Viewer.Properties;
-using System;
+﻿using System;
 using System.Data;
 using System.Data.OleDb;
 using System.Drawing;
-using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace Game_Database_Viewer

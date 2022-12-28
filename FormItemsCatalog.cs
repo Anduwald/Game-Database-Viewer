@@ -89,7 +89,7 @@ namespace Game_Database_Viewer
             {
                 DataView dv = new DataView(this.gameDBDataSet.items_catalog as DataTable);
 
-                string pattern = @"[^\p{L}\p{M}\'\s]";
+                string pattern = @"[^\p{L}\p{M}\s]";
                 string substitution = @"";
                 RegexOptions options = RegexOptions.Multiline;
 
